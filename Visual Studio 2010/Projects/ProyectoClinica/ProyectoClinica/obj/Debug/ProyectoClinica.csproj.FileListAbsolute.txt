@@ -1,0 +1,4 @@
+c:\users\alfeber_2\documents\visual studio 2010\Projects\ProyectoClinica\ProyectoClinica\bin\ProyectoClinica.dll
+c:\users\alfeber_2\documents\visual studio 2010\Projects\ProyectoClinica\ProyectoClinica\bin\ProyectoClinica.pdb
+c:\users\alfeber_2\documents\visual studio 2010\Projects\ProyectoClinica\ProyectoClinica\obj\Debug\ProyectoClinica.dll
+c:\users\alfeber_2\documents\visual studio 2010\Projects\ProyectoClinica\ProyectoClinica\obj\Debug\ProyectoClinica.pdb

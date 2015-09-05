@@ -51,7 +51,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
+    <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
+    <Content Include="Estilos\bootstrap-theme.css" />
+    <Content Include="Estilos\bootstrap-theme.min.css" />
+    <Content Include="Estilos\bootstrap.css" />
+    <Content Include="Estilos\bootstrap.min.css" />
+    <Content Include="Estilos\estilos.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Formulario.aspx" />
+    <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.dll" />
+    <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.pdb" />
+    <Content Include="Principal.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
@@ -73,7 +85,33 @@
     <Compile Include="Formulario.aspx.designer.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Plantilla.Master.cs">
+      <DependentUpon>Plantilla.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Plantilla.Master.designer.cs">
+      <DependentUpon>Plantilla.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Estilos\bootstrap-theme.css.map" />
+    <None Include="Estilos\bootstrap.css.map" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Funlam-2015-02-Clinica-Web.csprojResolveAssemblyReference.cache" />
+    <Content Include="Plantilla.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

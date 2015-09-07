@@ -9,6 +9,7 @@
     background-color:rgba(255,255,255,.8);
 }
 
+
 #login-FEG .help-block{
     font-size:12px    
 }
@@ -24,6 +25,59 @@
     margin-bottom: 10px;
 }
 
+  .style3
+        {
+            color: rgb(0, 0, 153);
+        }
+        .style4
+        {
+            font-size: medium;
+        }
+        .style6
+        {
+            font-size: small;
+        }
+        .style7
+        {
+            color: #FF0000;
+        }
+        .style8
+        {
+            color: #000000;
+        }
+        .style11
+        {
+            text-align: center;
+            color: #000000;
+        }
+        .style12
+        {
+            font-size: small;
+            font-family: Geneva, Tahoma, "Nimbus Sans L", sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 16.2px;
+            text-align: justify;
+            text-indent: 0px;
+            text-transform: none;
+            white-space: normal;
+            word-spacing: 0px;
+            margin-top: 10px;
+            margin-bottom: 15px;}
+            
+           .contactoimg
+           {
+                 width:500px;
+               float:right;
+               margin-top:-350px;
+               }
+
+.contentC
+{
+    width:500px;
+    }
 @media(max-width:768px){ 
     #login-FEG{
         background-color: inherit;
@@ -33,4 +87,7 @@
         background-color: inherit;
         border-top:0 none;
     }
+    
+    
 }
+

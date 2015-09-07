@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand">Clinica Web</a>
+                <a href="Principal.aspx" class="navbar-brand">Clinica Web</a>
             </div>
             <!--Inicia Menu-->
             <div class="collapse navbar-collapse" id="navegacion-FEG">

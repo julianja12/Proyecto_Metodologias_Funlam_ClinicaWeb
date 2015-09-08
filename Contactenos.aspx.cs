@@ -13,5 +13,10 @@ namespace Funlam_2015_02_Clinica_Web
         {
 
         }
+
+        protected void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

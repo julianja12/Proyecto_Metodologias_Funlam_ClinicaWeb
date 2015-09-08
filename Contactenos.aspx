@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Plantilla.Master" AutoEventWireup="true" CodeBehind="Contactenos.aspx.cs" Inherits="Funlam_2015_02_Clinica_Web.Contactenos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <link href="Estilos/estilos.css" rel="stylesheet" type="text/css" />
+    <link href="Estilos/estilos.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class = "contentC">
+    <div class = "contentC">
     <form id="form1" runat="server">
     <h2 class="style11">Contactenos</h2>
     <p class="text-center">&nbsp;</p>
@@ -34,7 +34,8 @@
     </p>
     
     <p class="style7">
-        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" />
+        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" 
+            onclick="btnEnviar_Click" />
     </p>
 
     </div>

@@ -68,7 +68,7 @@
                                         </form>
                                     </div>
                                     <div class="bottom text-center">
-                                        <a href="#"><b>Registrarse</b></a>
+                                        <a href="Registro.aspx"><b>Registrarse</b></a>
                                     </div>
                                 </div>
                             </li>

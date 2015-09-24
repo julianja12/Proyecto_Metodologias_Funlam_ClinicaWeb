@@ -10,13 +10,16 @@
     <p class="style12" 
         style="orphans: auto; widows: 1; -webkit-text-stroke-width: 0px;">
         En nuestra EPS tenemos atención personalizada las 24 horas del día de lunes a 
-        domingo. Todo esto atraves de nuestra pagina.<br />
+        domingo. Todo esto atraves de nuestra pagina.</p>
+    <p class="style12" 
+        style="orphans: auto; widows: 1; -webkit-text-stroke-width: 0px;">
+        <br />
         <span class="style8">Para comunicarse con nosotros puede enviar un mensaje atraves de esta pagina o 
         comunicarse con&nbsp; a los siguientes numeros:</span></p>
     <ul style="color: rgb(199, 110, 52); font-family: Geneva, Tahoma, 'Nimbus Sans L', sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 16.2px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
         <li><span class="style3"><strong><span class="style6">Atención al usuario línea 
             gratuita desde cualquier parte del país:&nbsp;</span></strong></span><span class="style6"><span 
-                class="style8">018000 
+                class="style8">01 8000 
             450003</li>
         </span></span><span class="style3"><span class="style6">
         <li><strong>Medellin:</strong></span><span class="style4"><span 

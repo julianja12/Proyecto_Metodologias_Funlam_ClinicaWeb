@@ -6,7 +6,7 @@
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(255,255,255,8);
 }
 
 
@@ -15,7 +15,7 @@
 }
 
 #login-FEG .bottom{
-    background-color:rgba(255,255,255,.8);
+    background-color:rgba(255,255,255,8);
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
@@ -23,6 +23,17 @@
 
 #login-FEG .form-group {
     margin-bottom: 10px;
+}
+
+@media(max-width:768px){ 
+    #login-FEG{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-FEG .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
 }
 
   .style3
@@ -78,16 +89,5 @@
 {
     width:500px;
     }
-@media(max-width:768px){ 
-    #login-FEG{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-FEG .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
-    
-    
-}
+
 

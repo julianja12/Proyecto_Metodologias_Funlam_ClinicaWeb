@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class = "contentC">
     <form id="form1" runat="server">
-    <h2 class="style11">Contactenos</h2>
+    <h2 class="style11">Contáctenos</h2>
     <p class="text-center">&nbsp;</p>
     <p class="style12" 
         style="orphans: auto; widows: 1; -webkit-text-stroke-width: 0px;">

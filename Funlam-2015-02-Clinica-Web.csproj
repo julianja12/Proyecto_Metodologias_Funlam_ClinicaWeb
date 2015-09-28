@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -84,17 +87,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClinicaWebBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicaWebBD.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Contactenos.aspx.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contactenos.aspx.designer.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Scripts\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
@@ -127,17 +130,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Scripts\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Scripts\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
+    <EntityDeploy Include="ClinicaWebBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ClinicaWebBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Estilos\bootstrap-theme.css.map" />
     <None Include="Estilos\bootstrap.css.map" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />

@@ -89,6 +89,52 @@
 .contentC
 {
     width:500px;
+ }
+    
+#campos{
+
+
+	width: 300px;
+}
+
+.form-group
+{
+    padding:10px;  
+}
+
+.form-horizontal
+   {
+    padding:10px;  
+}
+.FAgregar
+{
+    margin-top:50px;
+    margin-left:100px;
     }
 
+.FEditar
+{  
+    margin-top:-33px;
+    margin-left:200px;
+    }
 
+.FEliminar
+{
+    margin-top:-34px;
+    margin-left:285px;
+     }
+     
+.Botones
+{
+    margin-left: 130px;
+    
+    }
+    
+ #GridView1
+ {
+     position:relative;
+     float:left;
+     margin-top:40px;
+     
+     
+     }

@@ -37,7 +37,7 @@
     </p>
     
     <p class="style7">
-        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" 
+        <asp:Button ID="btnEnviar" class="btn btn-primary" runat="server" Text="Enviar" 
             onclick="btnEnviar_Click" />
     </p>
 

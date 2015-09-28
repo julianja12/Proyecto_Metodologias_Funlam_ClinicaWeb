@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="Estilos/estilos.css" rel="stylesheet" type="text/css" />
     <link href="Estilos/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Estilos/estilos.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -31,7 +31,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Asignacion de Citas</a></li>
-                            <li><a href="#">Usuarios</a></li>
+                            <li><a href="AdministacionUsuarios.aspx">Usuarios</a></li>
                             <li><a href="#">Privacidad</a></li>
                         </ul>
                          

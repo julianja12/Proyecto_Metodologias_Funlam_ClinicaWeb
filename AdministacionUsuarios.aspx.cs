@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Funlam_2015_02_Clinica_Web
 {
-    public partial class Formulario : System.Web.UI.Page
+    public partial class AdministacionUsuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

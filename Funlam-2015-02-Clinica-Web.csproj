@@ -54,6 +54,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
     <Content Include="Contactenos.aspx" />
@@ -63,7 +64,6 @@
     <Content Include="Estilos\bootstrap.min.css" />
     <Content Include="Estilos\estilos.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Formulario.aspx" />
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.csproj.FileListAbsolute.txt" />
@@ -87,6 +87,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministacionUsuarios.aspx.cs">
+      <DependentUpon>AdministacionUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministacionUsuarios.aspx.designer.cs">
+      <DependentUpon>AdministacionUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClinicaWebBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,13 +105,6 @@
     </Compile>
     <Compile Include="Contactenos.aspx.designer.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario.aspx.cs">
-      <DependentUpon>Formulario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formulario.aspx.designer.cs">
-      <DependentUpon>Formulario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Plantilla.Master.cs">
       <DependentUpon>Plantilla.Master</DependentUpon>

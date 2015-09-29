@@ -9,7 +9,6 @@
     background-color:rgba(255,255,255,8);
 }
 
-
 #login-FEG .help-block{
     font-size:12px    
 }
@@ -34,6 +33,10 @@
         background-color: inherit;
         border-top:0 none;
     }
+}
+
+#login-FEG .form-group {
+    margin-bottom: 10px;
 }
 
   .style3
@@ -81,14 +84,16 @@
            .contactoimg
            {
                width:500px;
-               float:left;
+               float:none;
                margin-left: 600px;
                margin-top:-350px;
-               }
+    height: 286px;
+}
 
 .contentC
 {
-    width:500px;
+    width:500px;width:500px;
+    float:left;
  }
     
 #campos{

@@ -57,12 +57,16 @@
     <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
-    <Content Include="Contactenos.aspx" />
+    <Content Include="..\..\Desktop\Contactenos.aspx">
+      <Link>Contactenos.aspx</Link>
+    </Content>
     <Content Include="Estilos\bootstrap-theme.css" />
     <Content Include="Estilos\bootstrap-theme.min.css" />
     <Content Include="Estilos\bootstrap.css" />
     <Content Include="Estilos\bootstrap.min.css" />
-    <Content Include="Estilos\estilos.css" />
+    <Content Include="..\..\Desktop\estilos.css">
+      <Link>Estilos\estilos.css</Link>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
@@ -99,12 +103,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaWebBD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Contactenos.aspx.cs">
+    <Compile Include="..\..\Desktop\Contactenos.aspx.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+      <Link>Contactenos.aspx.cs</Link>
     </Compile>
-    <Compile Include="Contactenos.aspx.designer.cs">
+    <Compile Include="..\..\Desktop\Contactenos.aspx.designer.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
+      <Link>Contactenos.aspx.designer.cs</Link>
     </Compile>
     <Compile Include="Plantilla.Master.cs">
       <DependentUpon>Plantilla.Master</DependentUpon>
@@ -155,7 +161,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>31150</DevelopmentServerPort>
+          <DevelopmentServerPort>12040</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

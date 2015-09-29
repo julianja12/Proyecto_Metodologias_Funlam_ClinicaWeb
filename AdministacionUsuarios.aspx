@@ -18,7 +18,7 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
- <h2 class="style11">Administracion de Usarios</h2>
+ <h2 class="style11">Administracion de Usuarios</h2>
     <p class="style11">&nbsp;</p>
     <p class="style11">&nbsp;</p>
 
@@ -88,7 +88,17 @@
  
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="NombreUsuario" HeaderText="Nombre" />
+            <asp:BoundField DataField="ApellidoUsuario" HeaderText="Apellido" />
+            <asp:BoundField DataField="Edad" HeaderText="Edad" />
+            <asp:BoundField DataField="Telefono" HeaderText="Telefono" />
+            <asp:BoundField DataField="Direccion" HeaderText="Direccion" />
+            <asp:BoundField DataField="Email" HeaderText="Correo Electronico" />
+            <asp:ButtonField CommandName="Editar" Text="Editar" />
+            <asp:ButtonField CommandName="Eliminar" Text="Eliminar" />
+        </Columns>
     </asp:GridView>
  
     </form>

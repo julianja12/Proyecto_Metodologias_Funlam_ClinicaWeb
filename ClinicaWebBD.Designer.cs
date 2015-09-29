@@ -19,7 +19,7 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Citas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
+[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
 [assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__TipoUsuar__IdUsu__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.TipoUsuario), true)]
 
 #endregion
@@ -169,13 +169,15 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// Crear un nuevo objeto Cita.
         /// </summary>
+        /// <param name="idUsuario">Valor inicial de la propiedad IdUsuario.</param>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
         /// <param name="fechaCita">Valor inicial de la propiedad FechaCita.</param>
         /// <param name="horaCita">Valor inicial de la propiedad HoraCita.</param>
         /// <param name="lugarCita">Valor inicial de la propiedad LugarCita.</param>
-        public static Cita CreateCita(global::System.Int32 idCita, global::System.DateTime fechaCita, global::System.Int32 horaCita, global::System.String lugarCita)
+        public static Cita CreateCita(global::System.Int32 idUsuario, global::System.Int32 idCita, global::System.DateTime fechaCita, global::System.Int32 horaCita, global::System.String lugarCita)
         {
             Cita cita = new Cita();
+            cita.IdUsuario = idUsuario;
             cita.IdCita = idCita;
             cita.FechaCita = fechaCita;
             cita.HoraCita = horaCita;
@@ -190,9 +192,9 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> IdUsuario
+        public global::System.Int32 IdUsuario
         {
             get
             {
@@ -207,8 +209,8 @@ namespace Funlam_2015_02_Clinica_Web
                 OnIdUsuarioChanged();
             }
         }
-        private Nullable<global::System.Int32> _IdUsuario;
-        partial void OnIdUsuarioChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _IdUsuario;
+        partial void OnIdUsuarioChanging(global::System.Int32 value);
         partial void OnIdUsuarioChanged();
     
         /// <summary>
@@ -721,18 +723,18 @@ namespace Funlam_2015_02_Clinica_Web
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Citas")]
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Cita")]
         public EntityCollection<Cita> Citas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Citas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Cita");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Citas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Cita", value);
                 }
             }
         }

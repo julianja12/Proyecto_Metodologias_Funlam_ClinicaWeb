@@ -37,6 +37,7 @@
                          
                     </li>
                     <li ><a href="Contactenos.aspx">Contáctenos</a></li>
+                    <li ><a href="Registro.aspx">Registro</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

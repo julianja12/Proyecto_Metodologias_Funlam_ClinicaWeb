@@ -57,6 +57,7 @@
     <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
+    <Content Include="ClinicaWebBD.edmx.sql" />
     <Content Include="Contactenos.aspx" />
     <Content Include="Estilos\bootstrap-theme.css" />
     <Content Include="Estilos\bootstrap-theme.min.css" />

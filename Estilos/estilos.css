@@ -80,10 +80,10 @@
             
            .contactoimg
            {
-               width:500px;
+               width:599px;
                float:left;
                margin-left: 600px;
-               margin-top:-350px;
+               margin-top:-400px;
                }
 
 .contentC
@@ -129,12 +129,4 @@
     margin-left: 130px;
     
     }
-    
- #GridView1
- {
-     position:relative;
-     float:left;
-     margin-top:40px;
-     
-     
-     }
+ 

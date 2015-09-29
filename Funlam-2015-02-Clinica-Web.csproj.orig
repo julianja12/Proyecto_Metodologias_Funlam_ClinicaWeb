@@ -57,9 +57,14 @@
     <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
+<<<<<<< HEAD
     <Content Include="..\..\Desktop\Contactenos.aspx">
       <Link>Contactenos.aspx</Link>
     </Content>
+=======
+    <Content Include="ClinicaWebBD.edmx.sql" />
+    <Content Include="Contactenos.aspx" />
+>>>>>>> 00a9c34da759564c54bcd0dc7bdc8b33976cecc7
     <Content Include="Estilos\bootstrap-theme.css" />
     <Content Include="Estilos\bootstrap-theme.min.css" />
     <Content Include="Estilos\bootstrap.css" />
@@ -134,7 +139,6 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ClinicaWebBD.edmx">

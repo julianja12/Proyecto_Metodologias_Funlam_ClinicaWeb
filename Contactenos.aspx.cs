@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
+using System.IO;
+using System.Text;
 
 namespace Funlam_2015_02_Clinica_Web
 {
@@ -16,7 +19,44 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
+            //Codigo obtenido de http://oscarsotorrio.com/post/2011/01/22/Envio-de-correo-en-NET-con-CSharp.aspx
+           try
+           {
+               txtMensaje.Text = "Nombre: " + txtNombre.Text + "\n" + "Correo de Contacto: " +txtCorreoE.Text + "\n" + "Mensaje: " + txtMensaje.Text;
 
+                //Configuración del Mensaje
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                //Especificamos el correo desde el que se enviará el Email y el nombre de la persona que lo envía
+                mail.From = new MailAddress("contactosclinicaweb@gmail.com", txtAsunto.Text, Encoding.UTF8);
+                //Aquí ponemos el asunto del correo
+                mail.Subject = txtAsunto.Text;
+                //Aquí ponemos el mensaje que incluirá el correo
+                mail.Body = txtMensaje.Text;
+                //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
+                mail.To.Add("clinicawebcorreo@gmail.com");
+                //Si queremos enviar archivos adjuntos tenemos que especificar la ruta en donde se encuentran
+                //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
+ 
+                //Configuracion del SMTP
+                SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
+                //Especificamos las credenciales con las que enviaremos el mail
+                SmtpServer.Credentials = new System.Net.NetworkCredential("contactosclinicaweb@gmail.com", "contactos2030");
+                SmtpServer.EnableSsl = true;
+                SmtpServer.Send(mail);
+
+                txtCorreoE.Text = "";
+                txtMensaje.Text = "";
+                txtNombre.Text = "";
+                txtAsunto.Text = "";
+                lblResultado.Text = "Mensaje enviado exitosamente";
+            }
+            catch (Exception ex)
+            {
+                lblResultado.Text = "Error: "+ex.Message;
+            }
+
+            
         }
     }
 }

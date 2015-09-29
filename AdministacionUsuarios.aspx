@@ -1,77 +1,95 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Plantilla.Master" AutoEventWireup="true" CodeBehind="AdministacionUsuarios.aspx.cs" Inherits="Funlam_2015_02_Clinica_Web.AdministacionUsuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style13
+        {
+            height: 20px;
+        }
+        .style14
+        {
+            width: 174px;
+        }
+        .style15
+        {
+            height: 20px;
+            width: 174px;
+        }
+    </style>
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
  <h2 class="style11">Administracion de Usarios</h2>
     <p class="style11">&nbsp;</p>
+    <p class="style11">&nbsp;</p>
 
-    <div class="container">
-        <br />
-    
-
-    <div class="form-group">
-      <label for="nombre" class="control-label col-md-2">Nombre:</label>
-      <div class="col-md-10">
-      <input class="form-control" id="campos" type="text" placeholder="Nombre:">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="apellido" class="control-label col-md-2"> Apellido:</label>
-      <div class="col-md-10">
-      <input class="form-control" id="campos" type="text" placeholder="Apellido:">
-      </div>
-    </div>
-
-    <div class="form-group"> 
-      <label for="edad" class="control-label col-md-2">Edad:</label>
-      <div class="col-md-10">
-      <input class="form-control" id="campos" type="text" placeholder="Edad::">
-      </div>   
-    </div>
-
-    <div class="form-group">
-      <label for="telefono" class="control-label col-md-2">Telefono:</label>
-      <div class="col-md-10">
-      <input class="form-control" id="campos" type="text" placeholder="Telefono:">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="direccion" class="control-label col-md-2">Direccion:</label>
-      <div class="col-md-10">
-      <input class="form-control" id="campos" type="text" placeholder="Direccion:">
-    </div>
-    </div>
-
-   <div class="form-group">
-      <label for="email" class="control-label col-md-2">Email:</label>
-      <div class="col-md-10">
-      <input class="form-control" id="campos" type="text" placeholder="Email:">
-    </div>
-  </div>
-   
-  <div class="Botones">
-  <div class="FAgregar">
-  <button class="btn btn-primary">Agregar</button>
-  </div>
  
-
-<div class="FEditar">
-  <button class="btn btn-primary">Editar</button>
- </div>
-
-
-<div class="FEliminar">
-  <button class="btn btn-primary">Eliminar</button>
-</div>
- </div>
-
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+    <table class="table" style="width:40%;">
+        <tr>
+            <td class="style14">
+                <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style15">
+                <asp:Label ID="Label2" runat="server" Text="Apellido:"></asp:Label>
+            </td>
+            <td class="style13">
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style14">
+                <asp:Label ID="Label3" runat="server" Text="Edad:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style14">
+                <asp:Label ID="Label4" runat="server" Text="Telefono:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style14">
+                <asp:Label ID="Label5" runat="server" Text="Direccion:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style14">
+                <asp:Label ID="Label6" runat="server" Text="Email:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style14">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnAgregar" class="btn btn-primary" runat="server" Text="Agregar" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnModificar" class="btn btn-primary" runat="server" Text="Editar" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnEliminar" class="btn btn-primary" runat="server" Text="Eliminar" />
+ 
+    <br />
+    <br />
+    <asp:GridView ID="GridView1" runat="server">
     </asp:GridView>
-
- </div>
  
     </form>
 </asp:Content>

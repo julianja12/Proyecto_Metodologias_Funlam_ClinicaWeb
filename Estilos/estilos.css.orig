@@ -83,12 +83,20 @@
             
            .contactoimg
            {
-               width:599px;
+<<<<<<< HEAD
+               width:500px;
                float:none;
                margin-left: 600px;
-               margin-top:-400px;
+               margin-top:-350px;
     height: 286px;
 }
+=======
+               width:599px;
+               float:left;
+               margin-left: 600px;
+               margin-top:-400px;
+               }
+>>>>>>> 00a9c34da759564c54bcd0dc7bdc8b33976cecc7
 
 .contentC
 {

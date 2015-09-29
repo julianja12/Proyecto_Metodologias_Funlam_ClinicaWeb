@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 09/28/2015 21:45:57
--- Generated from EDMX file: D:\Julian docs\Ingenieria\Decimo Semestre\Linea de Produndizacion.net\Funlam-2015-02-Clinica-Web\Funlam-2015-02-Clinica-Web\ClinicaWebBD.edmx
+-- Date Created: 09/29/2015 18:00:46
+-- Generated from EDMX file: C:\Users\ASUS\Desktop\Funlam-2015-02-Clinica-Web\Funlam-2015-02-Clinica-Web\ClinicaWebBD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -21,7 +21,7 @@ IF OBJECT_ID(N'[dbo].[FK__Citas__IdUsuario__09DE7BCC]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Citas] DROP CONSTRAINT [FK__Citas__IdUsuario__09DE7BCC];
 GO
 IF OBJECT_ID(N'[dbo].[FK__TipoUsuar__IdUsu__0519C6AF]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[TipoUsuario] DROP CONSTRAINT [FK__TipoUsuar__IdUsu__0519C6AF];
+    ALTER TABLE [dbo].[TipoUsuarios] DROP CONSTRAINT [FK__TipoUsuar__IdUsu__0519C6AF];
 GO
 
 -- --------------------------------------------------
@@ -31,11 +31,11 @@ GO
 IF OBJECT_ID(N'[dbo].[Citas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Citas];
 GO
-IF OBJECT_ID(N'[dbo].[TipoUsuario]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TipoUsuario];
+IF OBJECT_ID(N'[dbo].[TipoUsuarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoUsuarios];
 GO
-IF OBJECT_ID(N'[dbo].[Usuario]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Usuario];
+IF OBJECT_ID(N'[dbo].[Usuarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Usuarios];
 GO
 
 -- --------------------------------------------------
@@ -62,7 +62,7 @@ GO
 
 -- Creating table 'Usuarios'
 CREATE TABLE [dbo].[Usuarios] (
-    [IdUsuario] int  NOT NULL,
+    [IdUsuario] int IDENTITY(1,1) NOT NULL,
     [NombreUsuario] varchar(50)  NOT NULL,
     [ApellidoUsuario] varchar(50)  NOT NULL,
     [Edad] int  NOT NULL,

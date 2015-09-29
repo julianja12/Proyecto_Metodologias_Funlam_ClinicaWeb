@@ -129,7 +129,7 @@
         <img src="Img/contacto.jpg" alt="Logo" class="contactoimg" />
 
         <div class="container" id="Mapa">
-            <div class="col-md-6 hidden-xs">
+            <div class="col-md-12 hidden-xs">
                     <h4>Ubicación Geográfica de la clínica</h4>
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3334.9028277794996!2d-75.58069244576527!3d6.278167774998032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0xd3d0db8860f8092e!2sCemev+IPS+Robledo!5e0!3m2!1ses-419!2sco!4v1443050444386" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

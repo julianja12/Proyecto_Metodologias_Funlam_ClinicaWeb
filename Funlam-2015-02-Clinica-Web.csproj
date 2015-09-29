@@ -57,14 +57,13 @@
     <Content Include="AdministacionUsuarios.aspx" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
+    <Content Include="ClinicaWebBD.edmx.sql" />
     <Content Include="Contactenos.aspx" />
     <Content Include="Estilos\bootstrap-theme.css" />
     <Content Include="Estilos\bootstrap-theme.min.css" />
     <Content Include="Estilos\bootstrap.css" />
     <Content Include="Estilos\bootstrap.min.css" />
-    <Content Include="..\..\Desktop\estilos.css">
-      <Link>Estilos\estilos.css</Link>
-    </Content>
+    <Content Include="Estilos\estilos.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
@@ -103,6 +102,7 @@
     </Compile>
     <Compile Include="Contactenos.aspx.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contactenos.aspx.designer.cs">
       <DependentUpon>Contactenos.aspx</DependentUpon>
@@ -129,7 +129,6 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ClinicaWebBD.edmx">

@@ -11,19 +11,48 @@ namespace Funlam_2015_02_Clinica_Web
 {
     public partial class AdministacionUsuarios : System.Web.UI.Page
     {
-        EntityCollection<Usuario> lstUsuarios = new EntityCollection<Usuario>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
-            {
-                Session["Usuarios"] = lstUsuarios;
+           
+        }
 
-                GridView1.DataSource = lstUsuarios;
-                GridView1.DataKeyNames = new string[] { "IdUsuario" };
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "")
+            {
+                GridView1.DataSource = ConsultaNombre(txtNombre.Text);
                 GridView1.DataBind();
+            }
+
+        }
+
+        private ClinicaWebEntities datos = null;
+
+        public ClinicaWebEntities Datos
+        {
+
+            get
+            {
+                if (datos == null)
+                    datos = new ClinicaWebEntities();
+                return datos;
 
             }
+
+
+
+        } 
+        public List<Usuario> ConsultaNombre(String Nombre) {
+
+            IQueryable<Usuario> Usuario = from p in Datos.Usuarios
+                                          where p.NombreUsuario.Contains(Nombre)
+                                          select p;
+
+            return Usuario.ToList();
+        
         }
+           
+  
     }
 }

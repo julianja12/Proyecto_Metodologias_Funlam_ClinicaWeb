@@ -86,9 +86,9 @@
                width:599px;
                float:none;
                margin-left: 600px;
-               margin-top:-400px;
-    height: 286px;
-}
+               margin-top:-500px;
+               height: 287px;
+            }
 
 .contentC
 {
@@ -136,9 +136,39 @@
     }
 
 #GridView1
+{    text-align: center;
+     margin-top : -100px;
+     margin-left: 90px;
+}
+
+.FormView1
 {
-    position:relative; 
-    margin-left:400px;
-    margin-top: -300px;
+    position:relative;
+    margin-left:700px;
+    margin-top:-230px;
+    width:50px;
+    border-collapse:inherit;
+    top: 0px;
+    left: 0px;
+}
     
-    }
+.imgResgistro
+{   
+    position:relative;
+    margin-top: 35px;
+    width:600px;
+  
+    }    
+    
+  .Griew
+  {
+      margin-left:200px;
+      margin-top:-30px;
+      
+      }
+      
+   .ImgPrincipal
+   {
+        margin-left:65px;
+       
+       }

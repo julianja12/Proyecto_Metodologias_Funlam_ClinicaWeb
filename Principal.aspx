@@ -11,7 +11,7 @@
     <h3 class="style13">Bienvenidos a la Clinica Web</h3>
 <br />
 &nbsp;<p>
-<img src="Img/Clinica.jpg" alt="logo"/>
+<img src="Img/Clinica.jpg" class="ImgPrincipal" alt="logo"/>
         <br />
     </p>
 </asp:Content>

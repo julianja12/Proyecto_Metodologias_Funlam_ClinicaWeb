@@ -32,7 +32,6 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Asignacion de Citas</a></li>
                             <li><a href="AdministacionUsuarios.aspx">Usuarios</a></li>
-                            <li><a href="#">Privacidad</a></li>
                         </ul>
                          
                     </li>

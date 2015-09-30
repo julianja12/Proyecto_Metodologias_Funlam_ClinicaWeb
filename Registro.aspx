@@ -7,8 +7,8 @@
 <h1 class="text-right">Registro de Usuarios</h1>
 <img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/>&nbsp;&nbsp;&nbsp;
 <div class="FormView1">
-<asp:FormView ID="FormView1" runat="server" DataKeyNames="IdUsuario" 
-        DataSourceID="EntityDataSource1" Width="333px" DefaultMode="Insert">
+<asp:FormView ID="FormView1" CssClass="formulario" runat="server" DataKeyNames="IdUsuario" 
+        DataSourceID="EntityDataSource1" Width="401px" DefaultMode="Insert">
         <EditItemTemplate>
             IdUsuario:
             <asp:Label ID="IdUsuarioLabel1" runat="server" 
@@ -52,53 +52,54 @@
                 CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            NombreUsuario:
-            <asp:TextBox ID="NombreUsuarioTextBox" runat="server" 
+            Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control"  runat="server" 
                 Text='<%# Bind("NombreUsuario") %>' />
             <br />
-            ApellidoUsuario:
-            <asp:TextBox ID="ApellidoUsuarioTextBox" runat="server" 
+            Apellido:&nbsp;&nbsp;&nbsp; &nbsp;
+            <asp:TextBox ID="ApellidoUsuarioTextBox"  CssClass="form-control" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
             <br />
-            Edad:
-            <asp:TextBox ID="EdadTextBox" runat="server" Text='<%# Bind("Edad") %>' />
+            Edad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="EdadTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Edad") %>' />
             <br />
-            Telefono:
-            <asp:TextBox ID="TelefonoTextBox" runat="server" 
+            Telefono:&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Telefono") %>' />
             <br />
-            Direccion:
-            <asp:TextBox ID="DireccionTextBox" runat="server" 
+            Direccion:&nbsp;&nbsp;
+            <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Direccion") %>' />
             <br />
-            Email:
-            <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" Text='<%# Bind("Email") %>' />
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:LinkButton ID="InsertButton" CssClass="btn btn-success" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Insertar" />
-&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" 
+&nbsp;<asp:LinkButton ID="InsertCancelButton" CssClass="btn btn-success" runat="server" CausesValidation="False" 
                 CommandName="Cancel" Text="Cancelar" />
         </InsertItemTemplate>
+       
         <ItemTemplate>
-            IdUsuario:<br />
-            NombreUsuario:
+            IdUsuario:<br />Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="NombreUsuarioLabel" runat="server" 
                 Text='<%# Bind("NombreUsuario") %>' />
             <br />
-            ApellidoUsuario:
+            Apellido:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="ApellidoUsuarioLabel" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
             <br />
-            Edad:
+            Edad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="EdadLabel" runat="server" Text='<%# Bind("Edad") %>' />
             <br />
-            Telefono:
+            Telefono:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="TelefonoLabel" runat="server" Text='<%# Bind("Telefono") %>' />
             <br />
-            Direccion:
+            Direccion:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="DireccionLabel" runat="server" Text='<%# Bind("Direccion") %>' />
             <br />
-            Email:
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="EmailLabel" runat="server" Text='<%# Bind("Email") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 

@@ -3,14 +3,14 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
- <h2 class="style11">Administracion de Usuarios</h2>
+ <h2 class="style11">Administración de Usuarios</h2>
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
+   <%-- <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
 &nbsp;
     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
 &nbsp;&nbsp;
     <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" Text="Buscar" 
-        onclick="btnBuscar_Click" />
+        onclick="btnBuscar_Click" />--%>
     <br />
     <br />
     <br />
@@ -23,9 +23,9 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         DataKeyNames="IdUsuario" DataSourceID="EntityDataSource1" 
         AllowSorting="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" 
-        BorderWidth="1px" CellPadding="3">
+        BorderWidth="1px" CellPadding="3" CssClass= "table table-hover table-striped">
         <Columns>
-            <asp:CommandField HeaderText="Metodos" ShowDeleteButton="True" 
+            <asp:CommandField HeaderText="Metodos" ControlStyle-CssClass="btn btn-info" ShowDeleteButton="True" 
                 ShowEditButton="True" ShowSelectButton="True" />
             <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" 
                 SortExpression="NombreUsuario" />

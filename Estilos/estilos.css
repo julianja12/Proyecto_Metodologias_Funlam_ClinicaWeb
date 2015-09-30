@@ -154,15 +154,13 @@
     
 .imgResgistro
 {   
-    position:relative;
-    margin-top: 35px;
-    width:600px;
-  
+    margin-top: 30px;
+    width:550px;
     }    
     
   .Griew
   {
-      margin-left:200px;
+      margin-left:50px;
       margin-top:-30px;
       
       }
@@ -172,3 +170,15 @@
         margin-left:65px;
        
        }
+       
+  .formulario
+  {
+        margin-top: -150px; 
+        width:400px; 
+        margin-left:20px; 
+      }
+       
+ .btn-success
+ {margin-left:45px;
+     
+     }

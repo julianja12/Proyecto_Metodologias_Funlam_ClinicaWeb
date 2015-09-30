@@ -14,42 +14,30 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "")
-            {
-                GridView1.DataSource = ConsultaNombre(txtNombre.Text);
-                GridView1.DataBind();
-            }
+            //if (txtNombre.Text != "")
+            //{
+            //    ClinicaWebEntities clinica = new ClinicaWebEntities();
 
-        }
+            //    var result = (from a in clinica.Usuarios where a.NombreUsuario == txtNombre.Text select a).ToList();
 
-        private ClinicaWebEntities datos = null;
+            //    GridView1.DataSourceID = null;
+            //    GridView1.DataSource = result;
+            //    GridView1.DataBind();
 
-        public ClinicaWebEntities Datos
-        {
-
-            get
-            {
-                if (datos == null)
-                    datos = new ClinicaWebEntities();
-                return datos;
-
-            }
-
-
-
-        } 
-        public List<Usuario> ConsultaNombre(String Nombre) {
-
-            IQueryable<Usuario> Usuario = from p in Datos.Usuarios
-                                          where p.NombreUsuario.Contains(Nombre)
-                                          select p;
-
-            return Usuario.ToList();
+            //}
+            //else {
+     
+            //    GridView1.DataSourceID = null;
+            //    GridView1.DataSource = EntityDataSource1;
+            //    GridView1.DataBind();
+               
+            
+            //}
         
         }
            

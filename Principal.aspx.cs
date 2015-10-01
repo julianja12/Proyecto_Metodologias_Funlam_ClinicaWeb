@@ -22,11 +22,11 @@ namespace ProyectoClinica
                 {
                     Response.Redirect("AdministacionUsuarios.aspx");
                 }
-                
+
             }
             else
-            {
-                lblMensaje.Text = "Usuario o contraseña incorrecta";
+            { 
+            lblMensaje.Text = "Usuario o contraseña incorrectas, favor verificar";
             }
         }
     }

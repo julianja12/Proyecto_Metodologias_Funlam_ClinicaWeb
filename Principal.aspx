@@ -13,7 +13,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
-    <h3 class="style13">Bienvenidos a la Clinica Web</h3>
+    <h3 class="style13"><strong>Bienvenidos a la Clinica Web</strong></h3>
 <br />
 &nbsp;<p>
 <img src="Img/Clinica.jpg" class="ImgPrincipal" alt="logo"/></p>
@@ -33,7 +33,8 @@
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
         <br />
         <asp:Button ID="btnIngresar" runat="server" BackColor="#33CC33" 
-            ForeColor="White" onclick="btnIngresar_Click" Text="Ingresar" />
+            ForeColor="White" onclick="btnIngresar_Click" Text="Ingresar" 
+            BorderStyle="None" />
     </div>
 </asp:Panel>
 <p>

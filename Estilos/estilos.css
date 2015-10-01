@@ -39,6 +39,14 @@
     margin-bottom: 10px;
 }
 
+#Mapa
+{
+float:right;
+text-align: center;
+margin-top: 20px;
+}
+
+
   .style3
         {
             color: rgb(0, 0, 153);
@@ -81,13 +89,12 @@
             margin-top: 10px;
             margin-bottom: 15px;}
             
-           .contactoimg
+           #contactoimg
            {
-               width:599px;
-               float:none;
-               margin-left: 600px;
-               margin-top:-500px;
-               height: 287px;
+               float:right;
+               margin-top: 30px;
+               height: 260px;
+               width:inherit;
             }
 
 .contentC

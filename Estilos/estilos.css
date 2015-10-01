@@ -162,7 +162,7 @@ margin-top: 20px;
 .imgResgistro
 {   
     margin-top: 30px;
-    width:550px;
+    width:612px;
     }    
     
   .Griew
@@ -175,8 +175,9 @@ margin-top: 20px;
    .ImgPrincipal
    {
         margin-left:65px;
-       
-       }
+    height: 263px;
+    width: 924px;
+}
        
   .formulario
   {

@@ -13,5 +13,21 @@ namespace ProyectoClinica
         {
 
         }
+
+        protected void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "admin")
+            {
+                if (txtContraseña.Text == "admin")
+                {
+                    Response.Redirect("AdministacionUsuarios.aspx");
+                }
+                
+            }
+            else
+            {
+                lblMensaje.Text = "Usuario o contraseña incorrecta";
+            }
+        }
     }
 }

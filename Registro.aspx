@@ -7,6 +7,11 @@
 <h1 class="text-right">Registro de Usuarios</h1>
 <img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/>&nbsp;&nbsp;&nbsp;
 <div class="FormView1">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 <asp:FormView ID="FormView1" CssClass="formulario" runat="server" DataKeyNames="IdUsuario" 
         DataSourceID="EntityDataSource1" Width="401px" DefaultMode="Insert">
         <EditItemTemplate>

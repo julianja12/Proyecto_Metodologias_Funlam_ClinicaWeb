@@ -520,16 +520,22 @@ namespace Funlam_2015_02_Clinica_Web
         /// Crear un nuevo objeto Usuario.
         /// </summary>
         /// <param name="idUsuario">Valor inicial de la propiedad IdUsuario.</param>
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
         /// <param name="nombreUsuario">Valor inicial de la propiedad NombreUsuario.</param>
         /// <param name="apellidoUsuario">Valor inicial de la propiedad ApellidoUsuario.</param>
+        /// <param name="userName">Valor inicial de la propiedad UserName.</param>
+        /// <param name="contraseña">Valor inicial de la propiedad Contraseña.</param>
         /// <param name="edad">Valor inicial de la propiedad Edad.</param>
         /// <param name="telefono">Valor inicial de la propiedad Telefono.</param>
-        public static Usuario CreateUsuario(global::System.Int32 idUsuario, global::System.String nombreUsuario, global::System.String apellidoUsuario, global::System.Int32 edad, global::System.Int32 telefono)
+        public static Usuario CreateUsuario(global::System.Int32 idUsuario, global::System.Int32 cedula, global::System.String nombreUsuario, global::System.String apellidoUsuario, global::System.String userName, global::System.String contraseña, global::System.Int32 edad, global::System.Int32 telefono)
         {
             Usuario usuario = new Usuario();
             usuario.IdUsuario = idUsuario;
+            usuario.Cedula = cedula;
             usuario.NombreUsuario = nombreUsuario;
             usuario.ApellidoUsuario = apellidoUsuario;
+            usuario.UserName = userName;
+            usuario.Contraseña = contraseña;
             usuario.Edad = edad;
             usuario.Telefono = telefono;
             return usuario;
@@ -565,6 +571,30 @@ namespace Funlam_2015_02_Clinica_Web
         private global::System.Int32 _IdUsuario;
         partial void OnIdUsuarioChanging(global::System.Int32 value);
         partial void OnIdUsuarioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Cedula
+        {
+            get
+            {
+                return _Cedula;
+            }
+            set
+            {
+                OnCedulaChanging(value);
+                ReportPropertyChanging("Cedula");
+                _Cedula = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cedula");
+                OnCedulaChanged();
+            }
+        }
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
+        partial void OnCedulaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -613,6 +643,54 @@ namespace Funlam_2015_02_Clinica_Web
         private global::System.String _ApellidoUsuario;
         partial void OnApellidoUsuarioChanging(global::System.String value);
         partial void OnApellidoUsuarioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String UserName
+        {
+            get
+            {
+                return _UserName;
+            }
+            set
+            {
+                OnUserNameChanging(value);
+                ReportPropertyChanging("UserName");
+                _UserName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("UserName");
+                OnUserNameChanged();
+            }
+        }
+        private global::System.String _UserName;
+        partial void OnUserNameChanging(global::System.String value);
+        partial void OnUserNameChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Contraseña
+        {
+            get
+            {
+                return _Contraseña;
+            }
+            set
+            {
+                OnContraseñaChanging(value);
+                ReportPropertyChanging("Contraseña");
+                _Contraseña = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Contraseña");
+                OnContraseñaChanged();
+            }
+        }
+        private global::System.String _Contraseña;
+        partial void OnContraseñaChanging(global::System.String value);
+        partial void OnContraseñaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 09/29/2015 18:00:46
--- Generated from EDMX file: C:\Users\ASUS\Desktop\Funlam-2015-02-Clinica-Web\Funlam-2015-02-Clinica-Web\ClinicaWebBD.edmx
+-- Date Created: 10/04/2015 17:11:44
+-- Generated from EDMX file: D:\Julian docs\Ingenieria\Decimo Semestre\Linea de Produndizacion.net\Funlam-2015-02-Clinica-Web\Funlam-2015-02-Clinica-Web\ClinicaWebBD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -63,8 +63,11 @@ GO
 -- Creating table 'Usuarios'
 CREATE TABLE [dbo].[Usuarios] (
     [IdUsuario] int IDENTITY(1,1) NOT NULL,
+    [Cedula] int  NOT NULL,
     [NombreUsuario] varchar(50)  NOT NULL,
     [ApellidoUsuario] varchar(50)  NOT NULL,
+    [UserName] varchar(50)  NOT NULL,
+    [Contraseña] varchar(50)  NOT NULL,
     [Edad] int  NOT NULL,
     [Telefono] int  NOT NULL,
     [Direccion] nvarchar(250)  NULL,

@@ -32,8 +32,7 @@
         <br />
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
         <br />
-        <asp:Button ID="btnIngresar" runat="server" BackColor="#33CC33" 
-            ForeColor="White" onclick="btnIngresar_Click" Text="Ingresar" 
+        <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-success" onclick="btnIngresar_Click" Text="Ingresar" 
             BorderStyle="None" />
     </div>
 </asp:Panel>

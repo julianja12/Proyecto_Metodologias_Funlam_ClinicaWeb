@@ -41,8 +41,11 @@
       <PropertyRef Name="IdUsuario" />
     </Key>
     <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cedula" Type="int" Nullable="false" />
     <Property Name="NombreUsuario" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="ApellidoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Contraseña" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="Edad" Type="int" Nullable="false" />
     <Property Name="Telefono" Type="int" Nullable="false" />
     <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="250" />
@@ -114,8 +117,11 @@
             <PropertyRef Name="IdUsuario" />
           </Key>
           <Property Type="Int32" Name="IdUsuario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Cedula" Nullable="false" />
           <Property Type="String" Name="NombreUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="ApellidoUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Contraseña" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Edad" Nullable="false" />
           <Property Type="Int32" Name="Telefono" Nullable="false" />
           <Property Type="String" Name="Direccion" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -177,8 +183,11 @@
       <EntityTypeMapping TypeName="IsTypeOf(ClinicaWebModel.Usuario)">
         <MappingFragment StoreEntitySet="Usuarios">
           <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
           <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
           <ScalarProperty Name="ApellidoUsuario" ColumnName="ApellidoUsuario" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
           <ScalarProperty Name="Edad" ColumnName="Edad" />
           <ScalarProperty Name="Telefono" ColumnName="Telefono" />
           <ScalarProperty Name="Direccion" ColumnName="Direccion" />
@@ -208,14 +217,14 @@
       <Diagram Name="ClinicaWebBD">
         <EntityTypeShape EntityType="ClinicaWebModel.Cita" Width="1.5" PointX="3" PointY="1" Height="2.1725878906249996" />
         <EntityTypeShape EntityType="ClinicaWebModel.TipoUsuario" Width="1.5" PointX="3" PointY="4" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ClinicaWebModel.Usuario" Width="1.5" PointX="0.75" PointY="2" Height="2.7494921874999991" />
+        <EntityTypeShape EntityType="ClinicaWebModel.Usuario" Width="1.5" PointX="0.75" PointY="1.75" Height="3.3263964843749991" />
         <AssociationConnector Association="ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC" >
-          <ConnectorPoint PointX="2.25" PointY="2.5862939453125" />
-          <ConnectorPoint PointX="3" PointY="2.5862939453125" />
+          <ConnectorPoint PointX="2.25" PointY="2.4612939453125" />
+          <ConnectorPoint PointX="3" PointY="2.4612939453125" />
         </AssociationConnector>
         <AssociationConnector Association="ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF" >
-          <ConnectorPoint PointX="2.25" PointY="4.37474609375" />
-          <ConnectorPoint PointX="3" PointY="4.37474609375" />
+          <ConnectorPoint PointX="2.25" PointY="4.5381982421875" />
+          <ConnectorPoint PointX="3" PointY="4.5381982421875" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

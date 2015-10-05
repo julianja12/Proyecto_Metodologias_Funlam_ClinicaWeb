@@ -9,8 +9,8 @@
 &nbsp;
     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
 &nbsp;&nbsp;
-    <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" Text="Buscar" 
-        onclick="btnBuscar_Click" />
+    <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" 
+        Text="Buscar" />
     <br />
     <br />
     <br />
@@ -62,7 +62,13 @@
         ConnectionString="name=ClinicaWebEntities" 
         DefaultContainerName="ClinicaWebEntities" EnableDelete="True" 
         EnableFlattening="False" EnableInsert="True" EnableUpdate="True" 
-        EntitySetName="Usuarios">
+        EntitySetName="Usuarios"
+        Where="it.NombreUsuario LIKE '%' +@NombreUsuario+ '%'"  GroupBy="">
+        <WhereParameters>
+        <asp:ControlParameter ControlID="txtNombre" Name="NombreUsuario" PropertyName="TEXT" Type="String" DefaultValue="%"/>
+
+        </WhereParameters>
+
     </asp:EntityDataSource>
  
     </form>

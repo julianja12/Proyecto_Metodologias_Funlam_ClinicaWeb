@@ -16,31 +16,6 @@ namespace Funlam_2015_02_Clinica_Web
         {
             
         }
-
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (txtNombre.Text != "")
-            {
-                ClinicaWebEntities clinica = new ClinicaWebEntities();
-
-                var result = (from a in clinica.Usuarios where a.NombreUsuario == txtNombre.Text select a).ToList();
-
-                GridView1.DataSourceID = null;
-                GridView1.DataSource = result;
-                GridView1.DataBind();
-
-            }
-            else
-            {
-
-                GridView1.DataSourceID = null;
-                GridView1.DataSource = EntityDataSource1;
-                GridView1.DataBind();
-
-
-            }
-        
-        }
            
   
     }

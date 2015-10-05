@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 10/04/2015 17:11:44
+-- Date Created: 10/04/2015 20:52:41
 -- Generated from EDMX file: D:\Julian docs\Ingenieria\Decimo Semestre\Linea de Produndizacion.net\Funlam-2015-02-Clinica-Web\Funlam-2015-02-Clinica-Web\ClinicaWebBD.edmx
 -- --------------------------------------------------
 

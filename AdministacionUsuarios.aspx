@@ -11,6 +11,9 @@
 &nbsp;&nbsp;
     <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" 
         Text="Buscar" />
+    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtNombre" 
+    ErrorMessage="Solo Ingresar Tetxo" ForeColor="Red" 
+    ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
     <br />
     <br />
     <br />

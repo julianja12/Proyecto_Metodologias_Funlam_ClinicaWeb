@@ -62,30 +62,51 @@
             Cedula:
             <asp:TextBox ID="CedulaTextBox"  CssClass="form-control" runat="server" 
                 Text='<%# Bind("Cedula") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="CedulaTextBox" ErrorMessage="Debes Ingresar Un Numero" 
+                ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
             NombreUsuario:
             <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("NombreUsuario") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Solo Ingresar Tetxo" 
+                ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             <br />
             ApellidoUsuario:
             <asp:TextBox ID="ApellidoUsuarioTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                ControlToValidate="ApellidoUsuarioTextBox" ErrorMessage="Solo Ingresar Tetxo" 
+                ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             <br />
             UserName:
             <asp:TextBox ID="UserNameTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("UserName") %>' />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="UserNameTextBox" ErrorMessage="Debes Ingresar un Usuario" 
+                ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             Contraseña:
             <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Contraseña") %>' TextMode="Password" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="ContraseñaTextBox" 
+                ErrorMessage="Debes Ingresar una Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
             Edad:
             <asp:TextBox ID="EdadTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Edad") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" 
+                ControlToValidate="EdadTextBox" ErrorMessage="Debes Ingresar Un Numero" 
+                ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
             Telefono:
             <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Telefono") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" 
+                ControlToValidate="TelefonoTextBox" ErrorMessage="Debes Ingresar Un Numero" 
+                ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
             Direccion:
             <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" 
@@ -94,6 +115,10 @@
             Email:
             <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Email") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" 
+                ControlToValidate="EmailTextBox" 
+                ErrorMessage="La Direccion de Correo No Es Correcta" ForeColor="Red" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
             &nbsp;<asp:LinkButton ID="InsertButton"  CssClass="btn btn-primary" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Registrar Usuario" />

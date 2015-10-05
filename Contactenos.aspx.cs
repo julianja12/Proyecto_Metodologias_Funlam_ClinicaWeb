@@ -19,7 +19,6 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            //Codigo obtenido de http://oscarsotorrio.com/post/2011/01/22/Envio-de-correo-en-NET-con-CSharp.aspx
            try
            {
                txtMensaje.Text = "Nombre: " + txtNombre.Text + "\n" + "Correo de Contacto: " +txtCorreoE.Text + "\n" + "Mensaje: " + txtMensaje.Text;
@@ -35,6 +34,11 @@ namespace Funlam_2015_02_Clinica_Web
                 mail.Body = txtMensaje.Text;
                 //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
                 mail.To.Add("clinicawebcorreo@gmail.com");
+                //Se le enviara una copia del mensaje al correo del usuario si escribio su correo en su respectivo campo.
+                if (txtCorreoE.Text!=string.Empty)
+                {
+                    mail.CC.Add(txtCorreoE.Text);
+                }
                 //Si queremos enviar archivos adjuntos tenemos que especificar la ruta en donde se encuentran
                 //mail.Attachments.Add(new Attachment(@"C:\Documentos\carta.docx"));
  

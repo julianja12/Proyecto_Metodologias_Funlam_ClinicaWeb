@@ -46,6 +46,22 @@
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
 </div>
+
+<footer> 
+ <hr>
+    <div class="row">
+            <div class="col-md-6 hidden-xs hidden-sm">
+                <ul class="list-unstyled list-inline pull-right">
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 hidden-xs hidden-sm">
+                <p class="text-muted pull-left">Copyright © 2015 Clinica Web. Todos los Derechos Reservados.</p>
+            </div>
+        </div>
+</footer>
+
 <script src="Scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
 <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>  
 </body>

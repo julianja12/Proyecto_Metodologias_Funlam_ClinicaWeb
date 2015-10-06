@@ -24,13 +24,17 @@
         <br />
         Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+        &nbsp;<asp:Label ID="lblUsuario" runat="server" style="color: #FF0000" 
+            Text="* Favor ingresar usuario"></asp:Label>
         <br />
         <br />
         Contraseña&nbsp;&nbsp;
         <asp:TextBox ID="txtContrasenia" type="password" runat="server"></asp:TextBox>
+        &nbsp;<asp:Label ID="lblContrasenia" runat="server" style="color: #FF0000" 
+            Text="* Favor ingresar contraseña"></asp:Label>
         <br />
         <br />
-        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+        <asp:Label ID="lblMensaje" runat="server" style="color: #FF0000"></asp:Label>
         <br />
         <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-success" onclick="btnIngresar_Click" Text="Ingresar" 
             BorderStyle="None" />

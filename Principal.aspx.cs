@@ -32,23 +32,50 @@ namespace ProyectoClinica
             //lblMensaje.Text = "Usuario o contraseña incorrectas, favor verificar";
             //}
 
-
-
-            string user = txtUsuario.Text;
-            string pass = txtContrasenia.Text;
-            ClinicaWebEntities db = new ClinicaWebEntities();
-
-            string query = (from c in db.Usuarios
-                            where c.UserName == user && c.Contraseña == pass
-                            select c.NombreUsuario).FirstOrDefault();
-            if (query != null)
+            int cont = 0;
+            if (txtUsuario.Text == "")
             {
-                Session["user"] = query;
-                Response.Redirect("AdministacionUsuarios.aspx");
-
+                lblUsuario.Visible = true;
+                cont++;
             }
             else
-                lblMensaje.Text = "Usuario o Contraseña Incorrecto";
+            {
+                lblUsuario.Visible = false;
+            }
+
+            if (txtContrasenia.Text == "")
+            {
+                lblContrasenia.Visible = true;
+                cont++;
+            }
+            else
+            {
+                lblContrasenia.Visible = false;
+            }
+
+
+            if (cont == 0)
+            {
+                try
+                {
+
+                    string user = txtUsuario.Text;
+                    string pass = txtContrasenia.Text;
+                    ClinicaWebEntities db = new ClinicaWebEntities();
+
+                    string query = (from c in db.Usuarios
+                                    where c.UserName == user && c.Contraseña == pass
+                                    select c.NombreUsuario).FirstOrDefault();
+                    if (query != null)
+                    {
+                        Session["user"] = query;
+                        Response.Redirect("AdministacionUsuarios.aspx");
+
+                    }
+                    else
+                        lblMensaje.Text = "Usuario o Contraseña Incorrecto";
+                }
+            }
         }
     }
 }

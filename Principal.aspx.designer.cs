@@ -40,6 +40,15 @@ namespace ProyectoClinica {
         protected global::System.Web.UI.WebControls.TextBox txtUsuario;
         
         /// <summary>
+        /// Control lblUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        
+        /// <summary>
         /// Control txtContrasenia.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace ProyectoClinica {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContrasenia;
+        
+        /// <summary>
+        /// Control lblContrasenia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContrasenia;
         
         /// <summary>
         /// Control lblMensaje.

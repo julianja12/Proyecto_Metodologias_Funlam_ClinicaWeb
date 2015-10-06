@@ -7,7 +7,8 @@
 <h1 class="text-right">Registro de Usuarios</h1>
 <img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/><asp:FormView 
         ID="FormView1" CssClass="FormView1" runat="server"  DataKeyNames="IdUsuario" 
-        DataSourceID="EntityDataSource1" DefaultMode="Insert">
+        DataSourceID="EntityDataSource1" DefaultMode="Insert" 
+        onpageindexchanging="FormView1_PageIndexChanging">
         <EditItemTemplate>
             IdUsuario:
             <asp:Label ID="IdUsuarioLabel1" runat="server" 

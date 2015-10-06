@@ -27,7 +27,7 @@
         <br />
         <br />
         Contraseña&nbsp;&nbsp;
-        <asp:TextBox ID="txtContraseña" type="password" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtContrasenia" type="password" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>

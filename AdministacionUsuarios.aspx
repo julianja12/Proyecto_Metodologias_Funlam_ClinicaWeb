@@ -5,7 +5,7 @@
     <form id="form1" runat="server">
  <h2 class="style11">Administración de Usuarios</h2>
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
+    <asp:Label ID="lblNombre" runat="server" Text="Nombre:"></asp:Label>
 &nbsp;
     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
 &nbsp;&nbsp;
@@ -14,6 +14,10 @@
     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtNombre" 
     ErrorMessage="Solo Ingresar Tetxo" ForeColor="Red" 
     ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
+&nbsp;
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
     <br />

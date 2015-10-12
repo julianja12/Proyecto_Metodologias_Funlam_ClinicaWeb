@@ -22,16 +22,18 @@
         <br />
         <strong><span class="style14">Login</span></strong><br />
         <br />
-        Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-        &nbsp;<asp:Label ID="lblUsuario" runat="server" style="color: #FF0000" 
-            Text="* Favor ingresar usuario"></asp:Label>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+            ControlToValidate="txtUsuario" ErrorMessage="Por Favor Ingrese al Usuario" 
+            ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
         <br />
-        Contraseña&nbsp;&nbsp;
-        <asp:TextBox ID="txtContrasenia" type="password" runat="server"></asp:TextBox>
-        &nbsp;<asp:Label ID="lblContrasenia" runat="server" style="color: #FF0000" 
-            Text="* Favor ingresar contraseña"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contraseña&nbsp; &nbsp;
+        <asp:TextBox ID="txtContrasenia" runat="server" type="password"></asp:TextBox>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+            ControlToValidate="txtContrasenia" 
+            ErrorMessage="Por Favor Ingrese la Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
         <br />
         <asp:Label ID="lblMensaje" runat="server" style="color: #FF0000"></asp:Label>

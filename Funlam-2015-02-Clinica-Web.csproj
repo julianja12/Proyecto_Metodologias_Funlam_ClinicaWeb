@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdministacionUsuarios.aspx" />
+    <Content Include="AdministracionCitas.aspx" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="bin\Funlam-2015-02-Clinica-Web.pdb" />
     <Content Include="ClinicaWebBD.edmx.sql" />
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="AdministacionUsuarios.aspx.designer.cs">
       <DependentUpon>AdministacionUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionCitas.aspx.cs">
+      <DependentUpon>AdministracionCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionCitas.aspx.designer.cs">
+      <DependentUpon>AdministracionCitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClinicaWebBD.Designer.cs">
       <AutoGen>True</AutoGen>

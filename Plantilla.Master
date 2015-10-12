@@ -30,8 +30,7 @@
                             Citas <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Asignacion de Citas</a></li>
-                           
+                            <li><a href="AdministracionCitas.aspx">Asignacion de Citas</a></li>
                         </ul>
                          
                     </li>

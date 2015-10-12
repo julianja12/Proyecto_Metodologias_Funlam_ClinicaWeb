@@ -19,46 +19,7 @@ namespace ProyectoClinica
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            //if (txtUsuario.Text == "admin")
-            //{
-            //    if (txtContrasenia.Text == "admin")
-            //    {
-            //        Response.Redirect("AdministacionUsuarios.aspx");
-            //    }
-
-            //}
-            //else
-            //{ 
-            //lblMensaje.Text = "Usuario o contraseña incorrectas, favor verificar";
-            //}
-
-            int cont = 0;
-            if (txtUsuario.Text == "")
-            {
-                lblUsuario.Visible = true;
-                cont++;
-            }
-            else
-            {
-                lblUsuario.Visible = false;
-            }
-
-            if (txtContrasenia.Text == "")
-            {
-                lblContrasenia.Visible = true;
-                cont++;
-            }
-            else
-            {
-                lblContrasenia.Visible = false;
-            }
-
-
-            if (cont == 0)
-            {
-                try
-                {
-
+          
                     string user = txtUsuario.Text;
                     string pass = txtContrasenia.Text;
                     ClinicaWebEntities db = new ClinicaWebEntities();
@@ -77,5 +38,3 @@ namespace ProyectoClinica
                 }
             }
         }
-    }
-}

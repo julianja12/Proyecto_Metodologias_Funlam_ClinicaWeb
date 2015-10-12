@@ -173,7 +173,7 @@ namespace Funlam_2015_02_Clinica_Web
         /// <param name="fechaCita">Valor inicial de la propiedad FechaCita.</param>
         /// <param name="horaCita">Valor inicial de la propiedad HoraCita.</param>
         /// <param name="lugarCita">Valor inicial de la propiedad LugarCita.</param>
-        public static Cita CreateCita(global::System.Int32 idCita, global::System.DateTime fechaCita, global::System.Int32 horaCita, global::System.String lugarCita)
+        public static Cita CreateCita(global::System.Int32 idCita, global::System.DateTime fechaCita, global::System.DateTime horaCita, global::System.String lugarCita)
         {
             Cita cita = new Cita();
             cita.IdCita = idCita;
@@ -267,7 +267,7 @@ namespace Funlam_2015_02_Clinica_Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 HoraCita
+        public global::System.DateTime HoraCita
         {
             get
             {
@@ -282,8 +282,8 @@ namespace Funlam_2015_02_Clinica_Web
                 OnHoraCitaChanged();
             }
         }
-        private global::System.Int32 _HoraCita;
-        partial void OnHoraCitaChanging(global::System.Int32 value);
+        private global::System.DateTime _HoraCita;
+        partial void OnHoraCitaChanging(global::System.DateTime value);
         partial void OnHoraCitaChanged();
     
         /// <summary>

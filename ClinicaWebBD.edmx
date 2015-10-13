@@ -25,7 +25,7 @@
           <Property Name="IdUsuario" Type="int" />
           <Property Name="IdCita" Type="int" Nullable="false" />
           <Property Name="FechaCita" Type="datetime" Nullable="false" />
-          <Property Name="HoraCita" Type="datetime" Nullable="false" />
+          <Property Name="HoraCita" Type="int" Nullable="false" />
           <Property Name="LugarCita" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="TipoUsuarios">
@@ -99,7 +99,7 @@
           <Property Type="Int32" Name="IdUsuario" />
           <Property Type="Int32" Name="IdCita" Nullable="false" />
           <Property Type="DateTime" Name="FechaCita" Nullable="false" />
-          <Property Type="DateTime" Name="HoraCita" Nullable="false" />
+          <Property Type="Int32" Name="HoraCita" Nullable="false" />
           <Property Type="String" Name="LugarCita" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Usuario" Relationship="ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC" FromRole="Cita" ToRole="Usuario" />
         </EntityType>

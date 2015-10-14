@@ -22,10 +22,10 @@
           <Key>
             <PropertyRef Name="IdCita" />
           </Key>
-          <Property Name="IdUsuario" Type="int" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
           <Property Name="IdCita" Type="int" Nullable="false" />
-          <Property Name="FechaCita" Type="datetime" Nullable="false" />
-          <Property Name="HoraCita" Type="int" Nullable="false" />
+          <Property Name="FechaCita" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="HoraCita" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="LugarCita" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="TipoUsuarios">
@@ -52,7 +52,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK__Citas__IdUsuario__09DE7BCC">
-          <End Role="Usuarios" Type="ClinicaWebModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="ClinicaWebModel.Store.Usuarios" Multiplicity="1" />
           <End Role="Citas" Type="ClinicaWebModel.Store.Citas" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
@@ -96,10 +96,10 @@
           <Key>
             <PropertyRef Name="IdCita" />
           </Key>
-          <Property Type="Int32" Name="IdUsuario" />
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
           <Property Type="Int32" Name="IdCita" Nullable="false" />
-          <Property Type="DateTime" Name="FechaCita" Nullable="false" />
-          <Property Type="Int32" Name="HoraCita" Nullable="false" />
+          <Property Type="String" Name="FechaCita" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HoraCita" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="LugarCita" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Usuario" Relationship="ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC" FromRole="Cita" ToRole="Usuario" />
         </EntityType>
@@ -130,7 +130,7 @@
           <NavigationProperty Name="TipoUsuarios" Relationship="ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF" FromRole="Usuario" ToRole="TipoUsuario" />
         </EntityType>
         <Association Name="FK__Citas__IdUsuario__09DE7BCC">
-          <End Type="ClinicaWebModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="ClinicaWebModel.Usuario" Role="Usuario" Multiplicity="1" />
           <End Type="ClinicaWebModel.Cita" Role="Cita" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">

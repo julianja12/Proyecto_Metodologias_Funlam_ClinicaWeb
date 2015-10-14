@@ -19,7 +19,7 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
+[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
 [assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__TipoUsuar__IdUsu__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.TipoUsuario), true)]
 
 #endregion
@@ -169,13 +169,15 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// Crear un nuevo objeto Cita.
         /// </summary>
+        /// <param name="idUsuario">Valor inicial de la propiedad IdUsuario.</param>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
         /// <param name="fechaCita">Valor inicial de la propiedad FechaCita.</param>
         /// <param name="horaCita">Valor inicial de la propiedad HoraCita.</param>
         /// <param name="lugarCita">Valor inicial de la propiedad LugarCita.</param>
-        public static Cita CreateCita(global::System.Int32 idCita, global::System.DateTime fechaCita, global::System.Int32 horaCita, global::System.String lugarCita)
+        public static Cita CreateCita(global::System.Int32 idUsuario, global::System.Int32 idCita, global::System.String fechaCita, global::System.String horaCita, global::System.String lugarCita)
         {
             Cita cita = new Cita();
+            cita.IdUsuario = idUsuario;
             cita.IdCita = idCita;
             cita.FechaCita = fechaCita;
             cita.HoraCita = horaCita;
@@ -190,9 +192,9 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> IdUsuario
+        public global::System.Int32 IdUsuario
         {
             get
             {
@@ -207,8 +209,8 @@ namespace Funlam_2015_02_Clinica_Web
                 OnIdUsuarioChanged();
             }
         }
-        private Nullable<global::System.Int32> _IdUsuario;
-        partial void OnIdUsuarioChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _IdUsuario;
+        partial void OnIdUsuarioChanging(global::System.Int32 value);
         partial void OnIdUsuarioChanged();
     
         /// <summary>
@@ -243,7 +245,7 @@ namespace Funlam_2015_02_Clinica_Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime FechaCita
+        public global::System.String FechaCita
         {
             get
             {
@@ -253,13 +255,13 @@ namespace Funlam_2015_02_Clinica_Web
             {
                 OnFechaCitaChanging(value);
                 ReportPropertyChanging("FechaCita");
-                _FechaCita = StructuralObject.SetValidValue(value);
+                _FechaCita = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("FechaCita");
                 OnFechaCitaChanged();
             }
         }
-        private global::System.DateTime _FechaCita;
-        partial void OnFechaCitaChanging(global::System.DateTime value);
+        private global::System.String _FechaCita;
+        partial void OnFechaCitaChanging(global::System.String value);
         partial void OnFechaCitaChanged();
     
         /// <summary>
@@ -267,7 +269,7 @@ namespace Funlam_2015_02_Clinica_Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 HoraCita
+        public global::System.String HoraCita
         {
             get
             {
@@ -277,13 +279,13 @@ namespace Funlam_2015_02_Clinica_Web
             {
                 OnHoraCitaChanging(value);
                 ReportPropertyChanging("HoraCita");
-                _HoraCita = StructuralObject.SetValidValue(value);
+                _HoraCita = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("HoraCita");
                 OnHoraCitaChanged();
             }
         }
-        private global::System.Int32 _HoraCita;
-        partial void OnHoraCitaChanging(global::System.Int32 value);
+        private global::System.String _HoraCita;
+        partial void OnHoraCitaChanging(global::System.String value);
         partial void OnHoraCitaChanged();
     
         /// <summary>

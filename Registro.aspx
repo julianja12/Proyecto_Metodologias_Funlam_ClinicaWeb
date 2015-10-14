@@ -4,12 +4,14 @@
     </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
-<h1 class="text-right">Registro de Usuarios</h1>
+<h1 class="text-right"><br />Registro de Usuarios</h1>
+
+
 <img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/><asp:FormView 
         ID="FormView1" CssClass="FormView1" runat="server"  DataKeyNames="IdUsuario" 
         DataSourceID="EntityDataSource1" DefaultMode="Insert">
         <EditItemTemplate>
-            IdUsuario:
+            IdUsuario: 
             <asp:Label ID="IdUsuarioLabel1" runat="server" 
                 Text='<%# Eval("IdUsuario") %>' />
             <br />
@@ -59,41 +61,32 @@
                 CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            Cedula:
-            <asp:TextBox ID="CedulaTextBox"  CssClass="form-control" runat="server" 
-                Text='<%# Bind("Cedula") %>' />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                ControlToValidate="CedulaTextBox" ErrorMessage="Debes Ingresar Un Numero" 
-                ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
-            <br />
-            NombreUsuario:
+
+          Nombre:
             <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("NombreUsuario") %>' />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                 ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Solo Ingresar Tetxo" 
                 ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             <br />
-            ApellidoUsuario:
+
+            Apellido:
             <asp:TextBox ID="ApellidoUsuarioTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
                 ControlToValidate="ApellidoUsuarioTextBox" ErrorMessage="Solo Ingresar Tetxo" 
                 ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             <br />
-            UserName:
-            <asp:TextBox ID="UserNameTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("UserName") %>' />
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                ControlToValidate="UserNameTextBox" ErrorMessage="Debes Ingresar un Usuario" 
-                ForeColor="Red"></asp:RequiredFieldValidator>
+
+            Cédula:
+            <asp:TextBox ID="CedulaTextBox"  CssClass="form-control" runat="server" 
+                Text='<%# Bind("Cedula") %>' />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="CedulaTextBox" ErrorMessage="Debes Ingresar Un Numero" 
+                ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
-            Contraseña:
-            <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("Contraseña") %>' TextMode="Password" />
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                ControlToValidate="ContraseñaTextBox" 
-                ErrorMessage="Debes Ingresar una Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
+          
+            
             Edad:
             <asp:TextBox ID="EdadTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Edad") %>' />
@@ -101,17 +94,38 @@
                 ControlToValidate="EdadTextBox" ErrorMessage="Debes Ingresar Un Numero" 
                 ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
-            Telefono:
+
+             Teléfono:
             <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Telefono") %>' />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" 
                 ControlToValidate="TelefonoTextBox" ErrorMessage="Debes Ingresar Un Numero" 
                 ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
-            Direccion:
+
+              Dirección:
             <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Direccion") %>' />
             <br />
+
+            UserName:
+            <asp:TextBox ID="UserNameTextBox" CssClass="form-control" runat="server" 
+                Text='<%# Bind("UserName") %>' />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="UserNameTextBox" ErrorMessage="Debes Ingresar un Usuario" 
+                ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+
+            Contraseña:
+            <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" 
+                Text='<%# Bind("Contraseña") %>' TextMode="Password" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="ContraseñaTextBox" 
+                ErrorMessage="Debes Ingresar una Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+
+           
+          
             Email:
             <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Email") %>' />
@@ -119,6 +133,7 @@
                 ControlToValidate="EmailTextBox" 
                 ErrorMessage="La Direccion de Correo No Es Correcta" ForeColor="Red" 
                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            <br />
             <br />
             &nbsp;<asp:LinkButton ID="InsertButton"  CssClass="btn btn-primary" runat="server" CausesValidation="True" 
                 CommandName="Insert" Text="Registrar Usuario" />

@@ -19,10 +19,7 @@ namespace Funlam_2015_02_Clinica_Web
                 Response.Redirect("Principal.aspx");
 
             }
-            else
-            {
-                Label1.Text = Session["user"].ToString();
-            }
+         
         }
     }
 }

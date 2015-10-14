@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 10/04/2015 20:52:41
+-- Date Created: 10/14/2015 18:16:16
 -- Generated from EDMX file: D:\Julian docs\Ingenieria\Decimo Semestre\Linea de Produndizacion.net\Funlam-2015-02-Clinica-Web\Funlam-2015-02-Clinica-Web\ClinicaWebBD.edmx
 -- --------------------------------------------------
 
@@ -44,10 +44,10 @@ GO
 
 -- Creating table 'Citas'
 CREATE TABLE [dbo].[Citas] (
-    [IdUsuario] int  NULL,
-    [IdCita] int  NOT NULL,
-    [FechaCita] datetime  NOT NULL,
-    [HoraCita] int  NOT NULL,
+    [IdUsuario] int  NOT NULL,
+    [IdCita] int IDENTITY(1,1) NOT NULL,
+    [FechaCita] varchar(50)  NOT NULL,
+    [HoraCita] varchar(50)  NOT NULL,
     [LugarCita] nvarchar(50)  NOT NULL
 );
 GO

@@ -14,15 +14,7 @@ namespace ProyectoClinica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user"] != null)
-            {
-                Panel1.Visible = false;
-            }
-            else
-            {
-                Session["user"] = null;
-                Panel1.Visible = true;
-            }
+            Session["user"] = null;
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
@@ -39,6 +31,7 @@ namespace ProyectoClinica
                     {
                         Session["user"] = query;
                         Response.Redirect("AdministacionUsuarios.aspx");
+
                     }
                     else
                         lblMensaje.Text = "Usuario o Contraseña Incorrecto";

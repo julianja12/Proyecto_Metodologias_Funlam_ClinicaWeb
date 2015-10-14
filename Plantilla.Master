@@ -31,8 +31,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="AdministracionCitas.aspx">Asignacion de Citas</a></li>
-                        </ul>
-                         
+                        </ul>    
                     </li>
                     <li ><a href="Contactenos.aspx">Contáctenos</a></li>
                     <li id="RegistroL" runat="server"><a href="Registro.aspx">Registrarse</a></li>

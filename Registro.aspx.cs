@@ -11,10 +11,7 @@ namespace Funlam_2015_02_Clinica_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-
-
-    
     }
 }

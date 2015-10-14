@@ -11,7 +11,23 @@ namespace ProyectoClinica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null)
+            {
+                UsuarioL.Visible = false;
+                RegistroL.Visible = true;
+            }
+            else
+            {
+                UsuarioL.Visible = true;
+                RegistroL.Visible = false;
+            }
         }
-    }
+        protected void CerrarSesionAction_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+            UsuarioL.Visible = false;
+            RegistroL.Visible = true;
+            Response.Redirect("Principal.aspx");
+        }
+	}
 }

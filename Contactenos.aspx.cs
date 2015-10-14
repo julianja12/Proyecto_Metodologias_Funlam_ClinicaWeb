@@ -14,7 +14,18 @@ namespace Funlam_2015_02_Clinica_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null)
+            {
+                RegularExpressionValidator1.Enabled = false;
+                RequiredFieldValidator1.Enabled = false;
+                RequiredFieldValidator2.Enabled = false;
+            }
+            else
+            {
+                RegularExpressionValidator1.Enabled = true;
+                RequiredFieldValidator1.Enabled = true;
+                RequiredFieldValidator2.Enabled = true;    
+            }
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
@@ -58,9 +69,7 @@ namespace Funlam_2015_02_Clinica_Web
             catch (Exception ex)
             {
                 lblResultado.Text = "Error: "+ex.Message;
-            }
-
-            
+            } 
         }
     }
 }

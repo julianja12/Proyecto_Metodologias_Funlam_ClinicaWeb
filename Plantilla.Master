@@ -35,12 +35,22 @@
                          
                     </li>
                     <li ><a href="Contactenos.aspx">Contáctenos</a></li>
-                     <li ><a href="Registro.aspx">Registrarse</a></li>
+                    <li id="RegistroL" runat="server"><a href="Registro.aspx">Registrarse</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" id="UsuarioL" runat="server">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="NomUsuarioL" runat="server">
+                            Bienvenido, <%:Session["user"]%> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Ver Perfil</a></li>
+                            <li><a href="Principal.aspx" id="CerrarSesion" class="button" runat="server" onserverclick="CerrarSesionAction_Click" >Cerrar Sesión</a></li>
+                        </ul>   
+                    </li>
                 </ul>
             </div>
         </div>    
     </nav>
-   
 <div class="container">
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
@@ -52,7 +62,7 @@
             <div class="col-md-6 hidden-xs hidden-sm">
                 <ul class="list-unstyled list-inline pull-right">
                     <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Contáctenos</a></li>
+                    <li><a href="Contactenos.aspx">Contáctenos</a></li>
                 </ul>
             </div>
             <div class="col-md-6 hidden-xs hidden-sm">

@@ -66,7 +66,7 @@
             <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("NombreUsuario") %>' />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Solo Ingresar Texto" 
+                ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Solo Ingresar Tetxo" 
                 ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             <br />
 
@@ -74,7 +74,7 @@
             <asp:TextBox ID="ApellidoUsuarioTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
-                ControlToValidate="ApellidoUsuarioTextBox" ErrorMessage="Solo Ingresar Texto" 
+                ControlToValidate="ApellidoUsuarioTextBox" ErrorMessage="Solo Ingresar Tetxo" 
                 ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             <br />
 
@@ -197,4 +197,5 @@
         EntitySetName="Usuarios" EnableDelete="True" EnableUpdate="True">
     </asp:EntityDataSource>
     </form>
+
 </asp:Content>

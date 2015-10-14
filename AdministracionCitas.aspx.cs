@@ -13,58 +13,5 @@ namespace Funlam_2015_02_Clinica_Web
         {
 
         }
-
-        protected void btnAgendar_Click(object sender, EventArgs e)
-        {
-            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
-            {
-                Cita NuevaCita = new Cita();
-
-                NuevaCita.IdUsuario = Convert.ToInt32(txtUsuario.Text);
-                NuevaCita.FechaCita = txtFecha.Text;
-                NuevaCita.HoraCita = txtCita.Text;
-                NuevaCita.LugarCita = DropDownList1.Text;
-
-                oConexion.Citas.AddObject(NuevaCita);
-                oConexion.SaveChanges();
-                bool n= true;
-
-                if (n == true)
-                {   
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
-                }
-              
-            }
-        }
-
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-        
-        }
-
-        protected void btnConsultas_Click(object sender, EventArgs e)
-        {
-            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
-            {
-                List<UsuarioCitas> resultado = (from c in oConexion.Usuarios
-                                                       join f in oConexion.Citas
-                                                       on c.IdUsuario equals f.IdUsuario
-                                                       select new UsuarioCitas()
-                                                       {
-                                                           IdUsuario = c.IdUsuario,
-                                                           Cedula = c.Cedula,
-                                                           Nombre = c.NombreUsuario,
-                                                           Apellido = c.ApellidoUsuario,
-                                                           Lugar = f.LugarCita,
-                                                           Fecha = f.FechaCita,
-                                                           Hora = f.HoraCita
-                                                       }
-                                                      ).ToList();
-
-                GridView1.DataSource = resultado;
-                GridView1.DataBind();
-
-            }
-        }
     }
 }

@@ -6,7 +6,7 @@
     <form id="form1" runat="server">
 <h1 class="text-right"><br />Registro de Usuarios</h1>
 
-
+<h1 class="text-right"><br />Registrarse es muy fácil y sencillo, solo debes responder a las siguientes preguntas:</h1>
 <img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/><asp:FormView 
         ID="FormView1" CssClass="FormView1" runat="server"  DataKeyNames="IdUsuario" 
         DataSourceID="EntityDataSource1" DefaultMode="Insert">
@@ -124,8 +124,7 @@
                 ErrorMessage="Debes Ingresar una Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
             <br />
 
-           
-          
+                   
             Email:
             <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" 
                 Text='<%# Bind("Email") %>' />

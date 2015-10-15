@@ -54,6 +54,13 @@ namespace Funlam_2015_02_Clinica_Web
                 txtNombre.Text = "";
                 txtAsunto.Text = "";
                 lblResultado.Text = "Mensaje enviado exitosamente";
+                bool n = true;
+
+                if (n == true)
+                {
+                    Response.Write("<script LANGUAGE='JavaScript' >alert(' Su Mensaje ha Sido Enviado Correctamente')</script>");
+                }
+              
             }
             catch (Exception ex)
             {

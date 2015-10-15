@@ -134,8 +134,10 @@
                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
             <br />
-            &nbsp;<asp:LinkButton ID="InsertButton"  CssClass="btn btn-primary" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Registrar Usuario" />
+            &nbsp;<asp:LinkButton ID="InsertButton"  CssClass="btn btn-primary" 
+                runat="server" CausesValidation="True" 
+                CommandName="Insert" Text="Registrar Usuario" 
+                onclick="InsertButton_Click" />
 &nbsp;<asp:LinkButton ID="InsertCancelButton"   CssClass="btn btn-primary" runat="server" CausesValidation="False" 
                 CommandName="Cancel" Text="Cancelar" />
         </InsertItemTemplate>

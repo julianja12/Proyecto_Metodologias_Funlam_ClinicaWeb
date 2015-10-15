@@ -13,5 +13,16 @@ namespace Funlam_2015_02_Clinica_Web
         {
             
         }
+
+        protected void InsertButton_Click(object sender, EventArgs e)
+        {
+            bool n = true;
+
+            if (n == true)
+            {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Se Registro el Usuario Correctamente')</script>");
+            }
+              
+        }
     }
 }

@@ -5,77 +5,77 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ClinicaWebModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <EntityContainer Name="ClinicaWebModelStoreContainer">
-    <EntitySet Name="Citas" EntityType="ClinicaWebModel.Store.Citas" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TipoUsuarios" EntityType="ClinicaWebModel.Store.TipoUsuarios" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Usuarios" EntityType="ClinicaWebModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK__Citas__IdUsuario__09DE7BCC" Association="ClinicaWebModel.Store.FK__Citas__IdUsuario__09DE7BCC">
-      <End Role="Usuario" EntitySet="Usuarios" />
-      <End Role="Cita" EntitySet="Citas" />
-    </AssociationSet>
-    <AssociationSet Name="FK__TipoUsuar__IdUsu__0519C6AF" Association="ClinicaWebModel.Store.FK__TipoUsuar__IdUsu__0519C6AF">
-      <End Role="Usuario" EntitySet="Usuarios" />
-      <End Role="TipoUsuario" EntitySet="TipoUsuarios" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Citas">
-    <Key>
-      <PropertyRef Name="IdCita" />
-    </Key>
-    <Property Name="IdUsuario" Type="int" Nullable="false" />
-    <Property Name="IdCita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FechaCita" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="HoraCita" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="LugarCita" Type="nvarchar" Nullable="false" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="TipoUsuarios">
-    <Key>
-      <PropertyRef Name="IdTipoUsuario" />
-    </Key>
-    <Property Name="IdUsuario" Type="int" Nullable="true" />
-    <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
-    <Property Name="NombreTipoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Usuarios">
-    <Key>
-      <PropertyRef Name="IdUsuario" />
-    </Key>
-    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Cedula" Type="int" Nullable="false" />
-    <Property Name="NombreUsuario" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="ApellidoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="Contraseña" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="Edad" Type="int" Nullable="false" />
-    <Property Name="Telefono" Type="int" Nullable="false" />
-    <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="250" />
-    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="100" />
-  </EntityType>
-  <Association Name="FK__Citas__IdUsuario__09DE7BCC">
-    <End Role="Usuario" Type="ClinicaWebModel.Store.Usuarios" Multiplicity="1" />
-    <End Role="Cita" Type="ClinicaWebModel.Store.Citas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="Cita">
-        <PropertyRef Name="IdUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__TipoUsuar__IdUsu__0519C6AF">
-    <End Role="Usuario" Type="ClinicaWebModel.Store.Usuarios" Multiplicity="0..1" />
-    <End Role="TipoUsuario" Type="ClinicaWebModel.Store.TipoUsuarios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="IdUsuario" />
-      </Principal>
-      <Dependent Role="TipoUsuario">
-        <PropertyRef Name="IdUsuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+        <EntityContainer Name="ClinicaWebModelStoreContainer">
+          <EntitySet Name="Citas" EntityType="ClinicaWebModel.Store.Citas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoUsuarios" EntityType="ClinicaWebModel.Store.TipoUsuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="ClinicaWebModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Citas__IdUsuario__09DE7BCC" Association="ClinicaWebModel.Store.FK__Citas__IdUsuario__09DE7BCC">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Citas" EntitySet="Citas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TipoUsuar__IdUsu__0519C6AF" Association="ClinicaWebModel.Store.FK__TipoUsuar__IdUsu__0519C6AF">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="TipoUsuarios" EntitySet="TipoUsuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Citas">
+          <Key>
+            <PropertyRef Name="IdCita" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdCita" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCita" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="HoraCita" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LugarCita" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TipoUsuarios">
+          <Key>
+            <PropertyRef Name="IdTipoUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
+          <Property Name="NombreTipoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="NombreUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Contraseña" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Edad" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__Citas__IdUsuario__09DE7BCC">
+          <End Role="Usuarios" Type="ClinicaWebModel.Store.Usuarios" Multiplicity="1" />
+          <End Role="Citas" Type="ClinicaWebModel.Store.Citas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Citas">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TipoUsuar__IdUsu__0519C6AF">
+          <End Role="Usuarios" Type="ClinicaWebModel.Store.Usuarios" Multiplicity="0..1" />
+          <End Role="TipoUsuarios" Type="ClinicaWebModel.Store.TipoUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="TipoUsuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ClinicaWebModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -159,43 +159,43 @@
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ClinicaWebModelStoreContainer" CdmEntityContainer="ClinicaWebEntities">
-    <EntitySetMapping Name="Citas">
-      <EntityTypeMapping TypeName="IsTypeOf(ClinicaWebModel.Cita)">
-        <MappingFragment StoreEntitySet="Citas">
-          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="FechaCita" ColumnName="FechaCita" />
-          <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
-          <ScalarProperty Name="LugarCita" ColumnName="LugarCita" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TipoUsuarios">
-      <EntityTypeMapping TypeName="IsTypeOf(ClinicaWebModel.TipoUsuario)">
-        <MappingFragment StoreEntitySet="TipoUsuarios">
-          <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="NombreTipoUsuario" ColumnName="NombreTipoUsuario" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Usuarios">
-      <EntityTypeMapping TypeName="IsTypeOf(ClinicaWebModel.Usuario)">
-        <MappingFragment StoreEntitySet="Usuarios">
-          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
-          <ScalarProperty Name="ApellidoUsuario" ColumnName="ApellidoUsuario" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
-          <ScalarProperty Name="Edad" ColumnName="Edad" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-  </EntityContainerMapping>
+          <EntitySetMapping Name="Citas">
+            <EntityTypeMapping TypeName="ClinicaWebModel.Cita">
+              <MappingFragment StoreEntitySet="Citas">
+                <ScalarProperty Name="LugarCita" ColumnName="LugarCita" />
+                <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
+                <ScalarProperty Name="FechaCita" ColumnName="FechaCita" />
+                <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoUsuarios">
+            <EntityTypeMapping TypeName="ClinicaWebModel.TipoUsuario">
+              <MappingFragment StoreEntitySet="TipoUsuarios">
+                <ScalarProperty Name="NombreTipoUsuario" ColumnName="NombreTipoUsuario" />
+                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="ClinicaWebModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ApellidoUsuario" ColumnName="ApellidoUsuario" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->

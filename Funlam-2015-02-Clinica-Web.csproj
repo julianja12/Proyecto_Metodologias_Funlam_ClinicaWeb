@@ -90,6 +90,7 @@
     <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="SQLQueryMD5.sql" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

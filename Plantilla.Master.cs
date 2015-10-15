@@ -15,11 +15,13 @@ namespace ProyectoClinica
             {
                 UsuarioL.Visible = false;
                 RegistroL.Visible = true;
+                MenuCitas.Visible = false;
             }
             else
             {
                 UsuarioL.Visible = true;
                 RegistroL.Visible = false;
+                MenuCitas.Visible = true;
             }
         }
         protected void CerrarSesionAction_Click(object sender, EventArgs e)
@@ -27,6 +29,7 @@ namespace ProyectoClinica
             Session["user"] = null;
             UsuarioL.Visible = false;
             RegistroL.Visible = true;
+            Page.ClientScript.RegisterStartupScript(typeof(Page), "closePage", "window.open('close.html', '_self', null);", true);
             Response.Redirect("Principal.aspx");
         }
 	}

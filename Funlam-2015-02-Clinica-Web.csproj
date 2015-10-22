@@ -80,6 +80,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Img\Clinica.jpg" />
     <Content Include="Img\contacto.jpg" />
+    <Content Include="Img\images.jpg" />
+    <Content Include="Img\reportaje.png" />
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.pdb" />

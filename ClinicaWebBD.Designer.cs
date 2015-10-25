@@ -19,8 +19,8 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
-[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__TipoUsuar__IdUsu__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.TipoUsuario), true)]
+[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Cita__Cedula__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
+[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__TipoUsuar__Cedul__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.TipoUsuario), true)]
 
 #endregion
 
@@ -75,77 +75,101 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Cita> Citas
+        public ObjectSet<Cita> Cita
         {
             get
             {
-                if ((_Citas == null))
+                if ((_Cita == null))
                 {
-                    _Citas = base.CreateObjectSet<Cita>("Citas");
+                    _Cita = base.CreateObjectSet<Cita>("Cita");
                 }
-                return _Citas;
+                return _Cita;
             }
         }
-        private ObjectSet<Cita> _Citas;
+        private ObjectSet<Cita> _Cita;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<TipoUsuario> TipoUsuarios
+        public ObjectSet<sysdiagrams> sysdiagrams
         {
             get
             {
-                if ((_TipoUsuarios == null))
+                if ((_sysdiagrams == null))
                 {
-                    _TipoUsuarios = base.CreateObjectSet<TipoUsuario>("TipoUsuarios");
+                    _sysdiagrams = base.CreateObjectSet<sysdiagrams>("sysdiagrams");
                 }
-                return _TipoUsuarios;
+                return _sysdiagrams;
             }
         }
-        private ObjectSet<TipoUsuario> _TipoUsuarios;
+        private ObjectSet<sysdiagrams> _sysdiagrams;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Usuario> Usuarios
+        public ObjectSet<TipoUsuario> TipoUsuario
         {
             get
             {
-                if ((_Usuarios == null))
+                if ((_TipoUsuario == null))
                 {
-                    _Usuarios = base.CreateObjectSet<Usuario>("Usuarios");
+                    _TipoUsuario = base.CreateObjectSet<TipoUsuario>("TipoUsuario");
                 }
-                return _Usuarios;
+                return _TipoUsuario;
             }
         }
-        private ObjectSet<Usuario> _Usuarios;
+        private ObjectSet<TipoUsuario> _TipoUsuario;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Usuario> Usuario
+        {
+            get
+            {
+                if ((_Usuario == null))
+                {
+                    _Usuario = base.CreateObjectSet<Usuario>("Usuario");
+                }
+                return _Usuario;
+            }
+        }
+        private ObjectSet<Usuario> _Usuario;
 
         #endregion
 
         #region Métodos AddTo
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Citas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Cita. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToCitas(Cita cita)
+        public void AddToCita(Cita cita)
         {
-            base.AddObject("Citas", cita);
+            base.AddObject("Cita", cita);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet TipoUsuarios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet sysdiagrams. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToTipoUsuarios(TipoUsuario tipoUsuario)
+        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
         {
-            base.AddObject("TipoUsuarios", tipoUsuario);
+            base.AddObject("sysdiagrams", sysdiagrams);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Usuarios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet TipoUsuario. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToUsuarios(Usuario usuario)
+        public void AddToTipoUsuario(TipoUsuario tipoUsuario)
         {
-            base.AddObject("Usuarios", usuario);
+            base.AddObject("TipoUsuario", tipoUsuario);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Usuario. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToUsuario(Usuario usuario)
+        {
+            base.AddObject("Usuario", usuario);
         }
 
         #endregion
@@ -169,16 +193,16 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// Crear un nuevo objeto Cita.
         /// </summary>
-        /// <param name="idUsuario">Valor inicial de la propiedad IdUsuario.</param>
         /// <param name="idCita">Valor inicial de la propiedad IdCita.</param>
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
         /// <param name="fechaCita">Valor inicial de la propiedad FechaCita.</param>
         /// <param name="horaCita">Valor inicial de la propiedad HoraCita.</param>
         /// <param name="lugarCita">Valor inicial de la propiedad LugarCita.</param>
-        public static Cita CreateCita(global::System.Int32 idUsuario, global::System.Int32 idCita, global::System.String fechaCita, global::System.String horaCita, global::System.String lugarCita)
+        public static Cita CreateCita(global::System.Int32 idCita, global::System.Int32 cedula, global::System.String fechaCita, global::System.String horaCita, global::System.String lugarCita)
         {
             Cita cita = new Cita();
-            cita.IdUsuario = idUsuario;
             cita.IdCita = idCita;
+            cita.Cedula = cedula;
             cita.FechaCita = fechaCita;
             cita.HoraCita = horaCita;
             cita.LugarCita = lugarCita;
@@ -188,30 +212,6 @@ namespace Funlam_2015_02_Clinica_Web
         #endregion
 
         #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 IdUsuario
-        {
-            get
-            {
-                return _IdUsuario;
-            }
-            set
-            {
-                OnIdUsuarioChanging(value);
-                ReportPropertyChanging("IdUsuario");
-                _IdUsuario = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdUsuario");
-                OnIdUsuarioChanged();
-            }
-        }
-        private global::System.Int32 _IdUsuario;
-        partial void OnIdUsuarioChanging(global::System.Int32 value);
-        partial void OnIdUsuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -239,6 +239,30 @@ namespace Funlam_2015_02_Clinica_Web
         private global::System.Int32 _IdCita;
         partial void OnIdCitaChanging(global::System.Int32 value);
         partial void OnIdCitaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Cedula
+        {
+            get
+            {
+                return _Cedula;
+            }
+            set
+            {
+                OnCedulaChanging(value);
+                ReportPropertyChanging("Cedula");
+                _Cedula = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cedula");
+                OnCedulaChanged();
+            }
+        }
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
+        partial void OnCedulaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -323,16 +347,16 @@ namespace Funlam_2015_02_Clinica_Web
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Usuario")]
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__Cita__Cedula__0519C6AF", "Usuario")]
         public Usuario Usuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Usuario").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__Cita__Cedula__0519C6AF", "Usuario").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Usuario").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__Cita__Cedula__0519C6AF", "Usuario").Value = value;
             }
         }
         /// <summary>
@@ -344,19 +368,176 @@ namespace Funlam_2015_02_Clinica_Web
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Usuario");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__Cita__Cedula__0519C6AF", "Usuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Usuario", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaWebModel.FK__Cita__Cedula__0519C6AF", "Usuario", value);
                 }
             }
         }
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="ClinicaWebModel", Name="sysdiagrams")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class sysdiagrams : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto sysdiagrams.
+        /// </summary>
+        /// <param name="name">Valor inicial de la propiedad name.</param>
+        /// <param name="principal_id">Valor inicial de la propiedad principal_id.</param>
+        /// <param name="diagram_id">Valor inicial de la propiedad diagram_id.</param>
+        public static sysdiagrams Createsysdiagrams(global::System.String name, global::System.Int32 principal_id, global::System.Int32 diagram_id)
+        {
+            sysdiagrams sysdiagrams = new sysdiagrams();
+            sysdiagrams.name = name;
+            sysdiagrams.principal_id = principal_id;
+            sysdiagrams.diagram_id = diagram_id;
+            return sysdiagrams;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 principal_id
+        {
+            get
+            {
+                return _principal_id;
+            }
+            set
+            {
+                Onprincipal_idChanging(value);
+                ReportPropertyChanging("principal_id");
+                _principal_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("principal_id");
+                Onprincipal_idChanged();
+            }
+        }
+        private global::System.Int32 _principal_id;
+        partial void Onprincipal_idChanging(global::System.Int32 value);
+        partial void Onprincipal_idChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 diagram_id
+        {
+            get
+            {
+                return _diagram_id;
+            }
+            set
+            {
+                if (_diagram_id != value)
+                {
+                    Ondiagram_idChanging(value);
+                    ReportPropertyChanging("diagram_id");
+                    _diagram_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("diagram_id");
+                    Ondiagram_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _diagram_id;
+        partial void Ondiagram_idChanging(global::System.Int32 value);
+        partial void Ondiagram_idChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> version
+        {
+            get
+            {
+                return _version;
+            }
+            set
+            {
+                OnversionChanging(value);
+                ReportPropertyChanging("version");
+                _version = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("version");
+                OnversionChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _version;
+        partial void OnversionChanging(Nullable<global::System.Int32> value);
+        partial void OnversionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] definition
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_definition);
+            }
+            set
+            {
+                OndefinitionChanging(value);
+                ReportPropertyChanging("definition");
+                _definition = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("definition");
+                OndefinitionChanged();
+            }
+        }
+        private global::System.Byte[] _definition;
+        partial void OndefinitionChanging(global::System.Byte[] value);
+        partial void OndefinitionChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>
@@ -391,24 +572,24 @@ namespace Funlam_2015_02_Clinica_Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> IdUsuario
+        public Nullable<global::System.Int32> Cedula
         {
             get
             {
-                return _IdUsuario;
+                return _Cedula;
             }
             set
             {
-                OnIdUsuarioChanging(value);
-                ReportPropertyChanging("IdUsuario");
-                _IdUsuario = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IdUsuario");
-                OnIdUsuarioChanged();
+                OnCedulaChanging(value);
+                ReportPropertyChanging("Cedula");
+                _Cedula = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cedula");
+                OnCedulaChanged();
             }
         }
-        private Nullable<global::System.Int32> _IdUsuario;
-        partial void OnIdUsuarioChanging(Nullable<global::System.Int32> value);
-        partial void OnIdUsuarioChanged();
+        private Nullable<global::System.Int32> _Cedula;
+        partial void OnCedulaChanging(Nullable<global::System.Int32> value);
+        partial void OnCedulaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -472,16 +653,16 @@ namespace Funlam_2015_02_Clinica_Web
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__TipoUsuar__IdUsu__0519C6AF", "Usuario")]
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__TipoUsuar__Cedul__09DE7BCC", "Usuario")]
         public Usuario Usuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF", "Usuario").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "Usuario").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF", "Usuario").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "Usuario").Value = value;
             }
         }
         /// <summary>
@@ -493,13 +674,13 @@ namespace Funlam_2015_02_Clinica_Web
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF", "Usuario");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "Usuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF", "Usuario", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "Usuario", value);
                 }
             }
         }
@@ -521,25 +702,21 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// Crear un nuevo objeto Usuario.
         /// </summary>
-        /// <param name="idUsuario">Valor inicial de la propiedad IdUsuario.</param>
         /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
         /// <param name="nombreUsuario">Valor inicial de la propiedad NombreUsuario.</param>
         /// <param name="apellidoUsuario">Valor inicial de la propiedad ApellidoUsuario.</param>
-        /// <param name="userName">Valor inicial de la propiedad UserName.</param>
-        /// <param name="contraseña">Valor inicial de la propiedad Contraseña.</param>
+        /// <param name="username">Valor inicial de la propiedad Username.</param>
+        /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
         /// <param name="edad">Valor inicial de la propiedad Edad.</param>
-        /// <param name="telefono">Valor inicial de la propiedad Telefono.</param>
-        public static Usuario CreateUsuario(global::System.Int32 idUsuario, global::System.Int32 cedula, global::System.String nombreUsuario, global::System.String apellidoUsuario, global::System.String userName, global::System.String contraseña, global::System.Int32 edad, global::System.Int32 telefono)
+        public static Usuario CreateUsuario(global::System.Int32 cedula, global::System.String nombreUsuario, global::System.String apellidoUsuario, global::System.String username, global::System.String contrasena, global::System.Int32 edad)
         {
             Usuario usuario = new Usuario();
-            usuario.IdUsuario = idUsuario;
             usuario.Cedula = cedula;
             usuario.NombreUsuario = nombreUsuario;
             usuario.ApellidoUsuario = apellidoUsuario;
-            usuario.UserName = userName;
-            usuario.Contraseña = contraseña;
+            usuario.Username = username;
+            usuario.contrasena = contrasena;
             usuario.Edad = edad;
-            usuario.Telefono = telefono;
             return usuario;
         }
 
@@ -552,33 +729,6 @@ namespace Funlam_2015_02_Clinica_Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 IdUsuario
-        {
-            get
-            {
-                return _IdUsuario;
-            }
-            set
-            {
-                if (_IdUsuario != value)
-                {
-                    OnIdUsuarioChanging(value);
-                    ReportPropertyChanging("IdUsuario");
-                    _IdUsuario = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdUsuario");
-                    OnIdUsuarioChanged();
-                }
-            }
-        }
-        private global::System.Int32 _IdUsuario;
-        partial void OnIdUsuarioChanging(global::System.Int32 value);
-        partial void OnIdUsuarioChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Int32 Cedula
         {
             get
@@ -587,11 +737,14 @@ namespace Funlam_2015_02_Clinica_Web
             }
             set
             {
-                OnCedulaChanging(value);
-                ReportPropertyChanging("Cedula");
-                _Cedula = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Cedula");
-                OnCedulaChanged();
+                if (_Cedula != value)
+                {
+                    OnCedulaChanging(value);
+                    ReportPropertyChanging("Cedula");
+                    _Cedula = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Cedula");
+                    OnCedulaChanged();
+                }
             }
         }
         private global::System.Int32 _Cedula;
@@ -651,48 +804,48 @@ namespace Funlam_2015_02_Clinica_Web
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String UserName
+        public global::System.String Username
         {
             get
             {
-                return _UserName;
+                return _Username;
             }
             set
             {
-                OnUserNameChanging(value);
-                ReportPropertyChanging("UserName");
-                _UserName = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("UserName");
-                OnUserNameChanged();
+                OnUsernameChanging(value);
+                ReportPropertyChanging("Username");
+                _Username = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Username");
+                OnUsernameChanged();
             }
         }
-        private global::System.String _UserName;
-        partial void OnUserNameChanging(global::System.String value);
-        partial void OnUserNameChanged();
+        private global::System.String _Username;
+        partial void OnUsernameChanging(global::System.String value);
+        partial void OnUsernameChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String Contraseña
+        public global::System.String contrasena
         {
             get
             {
-                return _Contraseña;
+                return _contrasena;
             }
             set
             {
-                OnContraseñaChanging(value);
-                ReportPropertyChanging("Contraseña");
-                _Contraseña = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("Contraseña");
-                OnContraseñaChanged();
+                OncontrasenaChanging(value);
+                ReportPropertyChanging("contrasena");
+                _contrasena = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("contrasena");
+                OncontrasenaChanged();
             }
         }
-        private global::System.String _Contraseña;
-        partial void OnContraseñaChanging(global::System.String value);
-        partial void OnContraseñaChanged();
+        private global::System.String _contrasena;
+        partial void OncontrasenaChanging(global::System.String value);
+        partial void OncontrasenaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -721,9 +874,9 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 Telefono
+        public Nullable<global::System.Int32> Telefono
         {
             get
             {
@@ -738,8 +891,8 @@ namespace Funlam_2015_02_Clinica_Web
                 OnTelefonoChanged();
             }
         }
-        private global::System.Int32 _Telefono;
-        partial void OnTelefonoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _Telefono;
+        partial void OnTelefonoChanging(Nullable<global::System.Int32> value);
         partial void OnTelefonoChanged();
     
         /// <summary>
@@ -801,18 +954,18 @@ namespace Funlam_2015_02_Clinica_Web
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__Citas__IdUsuario__09DE7BCC", "Cita")]
-        public EntityCollection<Cita> Citas
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__Cita__Cedula__0519C6AF", "Cita")]
+        public EntityCollection<Cita> Cita
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Cita");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cita>("ClinicaWebModel.FK__Cita__Cedula__0519C6AF", "Cita");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaWebModel.FK__Citas__IdUsuario__09DE7BCC", "Cita", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cita>("ClinicaWebModel.FK__Cita__Cedula__0519C6AF", "Cita", value);
                 }
             }
         }
@@ -823,18 +976,18 @@ namespace Funlam_2015_02_Clinica_Web
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__TipoUsuar__IdUsu__0519C6AF", "TipoUsuario")]
-        public EntityCollection<TipoUsuario> TipoUsuarios
+        [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario")]
+        public EntityCollection<TipoUsuario> TipoUsuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF", "TipoUsuario");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__IdUsu__0519C6AF", "TipoUsuario", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario", value);
                 }
             }
         }

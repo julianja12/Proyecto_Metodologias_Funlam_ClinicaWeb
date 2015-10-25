@@ -35,8 +35,8 @@ namespace ProyectoClinica
                     string pass = EncriptacionMD5(txtContrasenia.Text); 
                     ClinicaWebEntities db = new ClinicaWebEntities();
 
-                    string query = (from c in db.Usuarios
-                                    where c.UserName == user && c.Contraseña == pass
+                    string query = (from c in db.Usuario
+                                    where c.Username == user && c.contrasena == pass
                                     select c.NombreUsuario).FirstOrDefault();
                     if (query != null)
                     {

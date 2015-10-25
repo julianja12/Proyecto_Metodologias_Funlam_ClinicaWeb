@@ -65,7 +65,7 @@
                     <asp:Label ID="Label1" runat="server" Text="Nombre:(Opcional)"></asp:Label>
                     </td>
                     <td>
-                        &nbsp;<asp:TextBox ID="txtNombre" runat="server" 
+                        <asp:TextBox ID="txtNombre" runat="server" 
                     Width="190px"></asp:TextBox>
                     </td>
                 </tr>
@@ -81,8 +81,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Correo (Opcional)" ></asp:Label>
                     </td>
                     <td>
-                        &nbsp;
-                    <asp:TextBox ID="txtCorreoE" class="Email" runat="server" Width="190px"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="txtCorreoE" class="Email" runat="server" Width="190px"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtCorreoE" ErrorMessage="El formato del correo no es válido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -98,8 +97,7 @@
                     <asp:Label ID="Label3" runat="server" Text="Asunto:"></asp:Label>
                     </td>
                     <td>
-                        &nbsp;
-                    <asp:TextBox ID="txtAsunto" runat="server" Width="190px"></asp:TextBox>
+                        &nbsp;<asp:TextBox ID="txtAsunto" runat="server" Width="190px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAsunto" ErrorMessage="Escriba un asunto"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -145,5 +143,7 @@
         </div>
 
     </form>
+
+    </span>
 
 </asp:Content>

@@ -6,17 +6,14 @@
     <form id="form1" runat="server">
 <h1 class="text-right"><br />Registro de Usuarios</h1>
 
-<h1 class="text-right"><br />Registrarse es muy fácil y sencillo, solo debes responder a las siguientes preguntas:</h1>
-<img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/><asp:FormView 
-        ID="FormView1" CssClass="FormView1" runat="server"  DataKeyNames="IdUsuario" 
+<h1 class="text-right"><br />Registrarse es muy fácil y sencillo, solo debes llenar 
+    los siguientes campos:</h1>
+<img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/>&nbsp;&nbsp;&nbsp;<asp:FormView 
+        ID="FormView1" CssClass="FormView1" runat="server" DataKeyNames="Cedula" 
         DataSourceID="EntityDataSource1" DefaultMode="Insert">
         <EditItemTemplate>
-            IdUsuario: 
-            <asp:Label ID="IdUsuarioLabel1" runat="server" 
-                Text='<%# Eval("IdUsuario") %>' />
-            <br />
             Cedula:
-            <asp:TextBox ID="CedulaTextBox" runat="server" Text='<%# Bind("Cedula") %>' />
+            <asp:Label ID="CedulaLabel1" runat="server" Text='<%# Eval("Cedula") %>' />
             <br />
             NombreUsuario:
             <asp:TextBox ID="NombreUsuarioTextBox" runat="server" 
@@ -26,13 +23,13 @@
             <asp:TextBox ID="ApellidoUsuarioTextBox" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
             <br />
-            UserName:
-            <asp:TextBox ID="UserNameTextBox" runat="server" 
-                Text='<%# Bind("UserName") %>' />
+            Username:
+            <asp:TextBox ID="UsernameTextBox" runat="server" 
+                Text='<%# Bind("Username") %>' />
             <br />
-            Contraseña:
-            <asp:TextBox ID="ContraseñaTextBox" runat="server" 
-                Text='<%# Bind("Contraseña") %>' />
+            contrasena:
+            <asp:TextBox ID="contrasenaTextBox" runat="server" 
+                Text='<%# Bind("contrasena") %>' />
             <br />
             Edad:
             <asp:TextBox ID="EdadTextBox" runat="server" Text='<%# Bind("Edad") %>' />
@@ -48,12 +45,12 @@
             Email:
             <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
             <br />
-            Citas:
-            <asp:TextBox ID="CitasTextBox" runat="server" Text='<%# Bind("Citas") %>' />
+            Cita:
+            <asp:TextBox ID="CitaTextBox" runat="server" Text='<%# Bind("Cita") %>' />
             <br />
-            TipoUsuarios:
-            <asp:TextBox ID="TipoUsuariosTextBox" runat="server" 
-                Text='<%# Bind("TipoUsuarios") %>' />
+            TipoUsuario:
+            <asp:TextBox ID="TipoUsuarioTextBox" runat="server" 
+                Text='<%# Bind("TipoUsuario") %>' />
             <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
                 CommandName="Update" Text="Actualizar" />
@@ -61,91 +58,78 @@
                 CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
         </EditItemTemplate>
         <InsertItemTemplate>
-
-          Nombre:
-            <asp:TextBox ID="NombreUsuarioTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("NombreUsuario") %>' />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Solo Ingresar Texto" 
-                ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
-            <br />
-
-            Apellido:
-            <asp:TextBox ID="ApellidoUsuarioTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("ApellidoUsuario") %>' />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
-                ControlToValidate="ApellidoUsuarioTextBox" ErrorMessage="Solo Ingresar Texto" 
-                ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
-            <br />
-
-            Cédula:
-            <asp:TextBox ID="CedulaTextBox"  CssClass="form-control" runat="server" 
-                Text='<%# Bind("Cedula") %>' />
+            Cedula:
+            <asp:TextBox ID="CedulaTextBox" runat="server" Text='<%# Bind("Cedula") %>' 
+                CssClass="form-control" />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                 ControlToValidate="CedulaTextBox" ErrorMessage="Debes Ingresar Un Numero" 
                 ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
-          
-            
+            NombreUsuario:
+            <asp:TextBox ID="NombreUsuarioTextBox" runat="server" 
+                Text='<%# Bind("NombreUsuario") %>' CssClass="form-control" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                ControlToValidate="NombreUsuarioTextBox" ErrorMessage="Solo Ingresar Texto" 
+                ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
+            <br />
+            ApellidoUsuario:
+            <asp:TextBox ID="ApellidoUsuarioTextBox" runat="server" 
+                Text='<%# Bind("ApellidoUsuario") %>' CssClass="form-control" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
+                ControlToValidate="ApellidoUsuarioTextBox" ErrorMessage="Solo Ingresar Texto" 
+                ForeColor="Red" ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
+            <br />
+            Username:
+            <asp:TextBox ID="UsernameTextBox" runat="server" 
+                Text='<%# Bind("Username") %>' CssClass="form-control" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="UsernameTextBox" ErrorMessage="Debes Ingresar un Usuario" 
+                ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
+            contrasena:
+            <asp:TextBox ID="contrasenaTextBox" runat="server" 
+                Text='<%# Bind("contrasena") %>' CssClass="form-control" 
+                TextMode="Password" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="contrasenaTextBox" 
+                ErrorMessage="Debes Ingresar una Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
+            <br />
             Edad:
-            <asp:TextBox ID="EdadTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("Edad") %>' />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" 
+            <asp:TextBox ID="EdadTextBox" runat="server" Text='<%# Bind("Edad") %>' 
+                CssClass="form-control" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" 
                 ControlToValidate="EdadTextBox" ErrorMessage="Debes Ingresar Un Numero" 
                 ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
-
-             Teléfono:
-            <asp:TextBox ID="TelefonoTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("Telefono") %>' />
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" 
+            Telefono:
+            <asp:TextBox ID="TelefonoTextBox" runat="server" 
+                Text='<%# Bind("Telefono") %>' CssClass="form-control" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" 
                 ControlToValidate="TelefonoTextBox" ErrorMessage="Debes Ingresar Un Numero" 
                 ForeColor="Red" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
             <br />
-
-              Dirección:
-            <asp:TextBox ID="DireccionTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("Direccion") %>' />
+            Direccion:
+            <asp:TextBox ID="DireccionTextBox" runat="server" 
+                Text='<%# Bind("Direccion") %>' CssClass="form-control" />
             <br />
-
-            UserName:
-            <asp:TextBox ID="UserNameTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("UserName") %>' />
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                ControlToValidate="UserNameTextBox" ErrorMessage="Debes Ingresar un Usuario" 
-                ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
-
-            Contraseña:
-            <asp:TextBox ID="ContraseñaTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("Contraseña") %>' TextMode="Password" />
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                ControlToValidate="ContraseñaTextBox" 
-                ErrorMessage="Debes Ingresar una Contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
-
-                   
             Email:
-            <asp:TextBox ID="EmailTextBox" CssClass="form-control" runat="server" 
-                Text='<%# Bind("Email") %>' />
+            <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' 
+                CssClass="form-control" />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" 
                 ControlToValidate="EmailTextBox" 
                 ErrorMessage="La Direccion de Correo No Es Correcta" ForeColor="Red" 
                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
             <br />
-            &nbsp;<asp:LinkButton ID="InsertButton"  CssClass="btn btn-primary" 
-                runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Registrar Usuario" 
-                onclick="InsertButton_Click" />
-&nbsp;<asp:LinkButton ID="InsertCancelButton"   CssClass="btn btn-primary" runat="server" CausesValidation="False" 
-                CommandName="Cancel" Text="Cancelar" />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                CommandName="Insert" Text="Registrar Usuario" CssClass="btn btn-primary" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
+                CausesValidation="False" CommandName="Cancel" Text="Cancelar" 
+                CssClass="btn btn-primary" />
         </InsertItemTemplate>
         <ItemTemplate>
-            IdUsuario:
-            <br />
             Cedula:
-            <asp:Label ID="CedulaLabel" runat="server" Text='<%# Bind("Cedula") %>' />
+            <asp:Label ID="CedulaLabel" runat="server" Text='<%# Eval("Cedula") %>' />
             <br />
             NombreUsuario:
             <asp:Label ID="NombreUsuarioLabel" runat="server" 
@@ -155,12 +139,12 @@
             <asp:Label ID="ApellidoUsuarioLabel" runat="server" 
                 Text='<%# Bind("ApellidoUsuario") %>' />
             <br />
-            UserName:
-            <asp:Label ID="UserNameLabel" runat="server" Text='<%# Bind("UserName") %>' />
+            Username:
+            <asp:Label ID="UsernameLabel" runat="server" Text='<%# Bind("Username") %>' />
             <br />
-            Contraseña:
-            <asp:Label ID="ContraseñaLabel" runat="server" 
-                Text='<%# Bind("Contraseña") %>' />
+            contrasena:
+            <asp:Label ID="contrasenaLabel" runat="server" 
+                Text='<%# Bind("contrasena") %>' />
             <br />
             Edad:
             <asp:Label ID="EdadLabel" runat="server" Text='<%# Bind("Edad") %>' />
@@ -174,12 +158,12 @@
             Email:
             <asp:Label ID="EmailLabel" runat="server" Text='<%# Bind("Email") %>' />
             <br />
-            Citas:
-            <asp:Label ID="CitasLabel" runat="server" Text='<%# Bind("Citas") %>' />
+            Cita:
+            <asp:Label ID="CitaLabel" runat="server" Text='<%# Bind("Cita") %>' />
             <br />
-            TipoUsuarios:
-            <asp:Label ID="TipoUsuariosLabel" runat="server" 
-                Text='<%# Bind("TipoUsuarios") %>' />
+            TipoUsuario:
+            <asp:Label ID="TipoUsuarioLabel" runat="server" 
+                Text='<%# Bind("TipoUsuario") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
                 CommandName="Edit" Text="Editar" />
@@ -189,13 +173,11 @@
                 CommandName="New" Text="Nuevo" />
         </ItemTemplate>
     </asp:FormView>
-    &nbsp;&nbsp;&nbsp;
-    
-    <asp:EntityDataSource ID="EntityDataSource1" runat="server" 
+&nbsp;<asp:EntityDataSource ID="EntityDataSource1" runat="server" 
         ConnectionString="name=ClinicaWebEntities" 
         DefaultContainerName="ClinicaWebEntities" 
         EnableFlattening="False" EnableInsert="True" 
-        EntitySetName="Usuarios" EnableDelete="True" EnableUpdate="True">
+        EntitySetName="Usuario" EnableDelete="True" EnableUpdate="True">
     </asp:EntityDataSource>
     </form>
 

@@ -9,7 +9,7 @@
 &nbsp;
     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
 &nbsp;&nbsp;
-    <asp:Button ID="btnBuscar" class="btn btn-primary" runat="server" 
+    <asp:Button ID="btnBuscar" CssClass="btn btn-primary" runat="server" 
         Text="Buscar" />
     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtNombre" 
     ErrorMessage="Solo Ingresar Tetxo" ForeColor="Red" 
@@ -27,23 +27,20 @@
     <div class="Griew">
     
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-        DataKeyNames="IdUsuario" DataSourceID="EntityDataSource1" 
+        DataKeyNames="Cedula" DataSourceID="EntityDataSource1" 
         AllowSorting="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" 
         BorderWidth="1px" CellPadding="3" CssClass= "table table-hover table-striped">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
                 ShowSelectButton="True" />
             <asp:BoundField DataField="Cedula" HeaderText="Cedula" 
-                SortExpression="Cedula" />
+                SortExpression="Cedula" ReadOnly="True" />
             <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" 
                 SortExpression="NombreUsuario" />
             <asp:BoundField DataField="ApellidoUsuario" HeaderText="ApellidoUsuario" 
                 SortExpression="ApellidoUsuario" />
-            <asp:BoundField DataField="UserName" HeaderText="UserName" 
-                SortExpression="UserName" />
-            <asp:BoundField DataField="Contraseña" HeaderText="Contraseña" 
-                SortExpression="Contraseña" />
-            <asp:BoundField DataField="Edad" HeaderText="Edad" SortExpression="Edad" />
+            <asp:BoundField DataField="Edad" HeaderText="Edad" 
+                SortExpression="Edad" />
             <asp:BoundField DataField="Telefono" HeaderText="Telefono" 
                 SortExpression="Telefono" />
             <asp:BoundField DataField="Direccion" HeaderText="Direccion" 
@@ -68,14 +65,15 @@
         ConnectionString="name=ClinicaWebEntities" 
         DefaultContainerName="ClinicaWebEntities" EnableDelete="True" 
         EnableFlattening="False" EnableInsert="True" EnableUpdate="True" 
-        EntitySetName="Usuarios"
-        Where="it.NombreUsuario LIKE '%' +@NombreUsuario+ '%'"  GroupBy="">
+        EntitySetName="Usuario" 
+        Where="it.NombreUsuario LIKE '%' +@NombreUsuario+ '%'">
         <WhereParameters>
-        <asp:ControlParameter ControlID="txtNombre" Name="NombreUsuario" PropertyName="TEXT" Type="String" DefaultValue="%"/>
-
+            <asp:ControlParameter ControlID="txtNombre" DefaultValue="%" 
+                Name="NombreUsuario" PropertyName="Text" Type="String" />
         </WhereParameters>
 
-    </asp:EntityDataSource>
- 
+
+     </asp:EntityDataSource>
+
     </form>
 </asp:Content>

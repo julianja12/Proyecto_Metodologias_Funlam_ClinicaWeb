@@ -20,12 +20,12 @@ namespace Funlam_2015_02_Clinica_Web
             {
                 Cita NuevaCita = new Cita();
 
-                NuevaCita.IdUsuario = Convert.ToInt32(txtUsuario.Text);
+                NuevaCita.Cedula = Convert.ToInt32(txtUsuario.Text);
                 NuevaCita.FechaCita = txtFecha.Text;
                 NuevaCita.HoraCita = txtCita.Text;
                 NuevaCita.LugarCita = DropDownList1.Text;
 
-                oConexion.Citas.AddObject(NuevaCita);
+                oConexion.Cita.AddObject(NuevaCita);
                 oConexion.SaveChanges();
                 bool n= true;
 
@@ -41,8 +41,8 @@ namespace Funlam_2015_02_Clinica_Web
         {
             using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
             {
-                int IdUsuario = Convert.ToInt32(txtUsuario.Text);
-                Cita CancelarCita = oConexion.Citas.Where(w => w.IdUsuario == IdUsuario).Single();
+                int Cedula = Convert.ToInt32(txtUsuario.Text);
+                Cita CancelarCita = oConexion.Cita.Where(w => w.Cedula == Cedula).Single();
 
                 oConexion.DeleteObject(CancelarCita);
                 oConexion.SaveChanges();
@@ -53,12 +53,12 @@ namespace Funlam_2015_02_Clinica_Web
                 {
                     Response.Write("<script LANGUAGE='JavaScript' >alert('Se Cancelo la Cita Correctamente')</script>");
 
-                    List<UsuarioCitas> resultado = (from c in oConexion.Usuarios
-                                                    join f in oConexion.Citas
-                                                    on c.IdUsuario equals f.IdUsuario
+                    List<UsuarioCitas> resultado = (from c in oConexion.Usuario
+                                                    join f in oConexion.Cita
+                                                    on c.Cedula equals f.Cedula
                                                     select new UsuarioCitas()
                                                     {
-                                                        IdUsuario = c.IdUsuario,
+                                                      
                                                         Cedula = c.Cedula,
                                                         Nombre = c.NombreUsuario,
                                                         Apellido = c.ApellidoUsuario,
@@ -79,12 +79,12 @@ namespace Funlam_2015_02_Clinica_Web
         {
             using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
             {
-                List<UsuarioCitas> resultado = (from c in oConexion.Usuarios
-                                                       join f in oConexion.Citas
-                                                       on c.IdUsuario equals f.IdUsuario
+                List<UsuarioCitas> resultado = (from c in oConexion.Usuario
+                                                       join f in oConexion.Cita
+                                                       on c.Cedula equals f.Cedula
                                                        select new UsuarioCitas()
                                                        {
-                                                           IdUsuario = c.IdUsuario,
+                                                          
                                                            Cedula = c.Cedula,
                                                            Nombre = c.NombreUsuario,
                                                            Apellido = c.ApellidoUsuario,

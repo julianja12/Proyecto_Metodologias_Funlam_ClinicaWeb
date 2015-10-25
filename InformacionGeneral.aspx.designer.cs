@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoClinica {
+namespace Funlam_2015_02_Clinica_Web {
     
     
     public partial class InformacionGeneral {

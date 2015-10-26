@@ -1,0 +1,145 @@
+﻿.navbar {
+	margin-bottom: 0;
+}
+
+#login-FEG{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,8);
+}
+
+#login-FEG .help-block{
+    font-size:12px    
+}
+
+#login-FEG .bottom{
+    background-color:rgba(255,255,255,8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-FEG .form-group {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){ 
+    #login-FEG{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-FEG .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+#login-FEG .form-group {
+    margin-bottom: 10px;
+}
+
+  .style3
+        {
+            color: rgb(0, 0, 153);
+        }
+        .style4
+        {
+            font-size: medium;
+        }
+        .style6
+        {
+            font-size: small;
+        }
+        .style7
+        {
+            color: #FF0000;
+        }
+        .style8
+        {
+            color: #000000;
+        }
+        .style11
+        {
+            text-align: center;
+            color: #000000;
+        }
+        .style12
+        {
+            font-size: small;
+            font-family: Geneva, Tahoma, "Nimbus Sans L", sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 16.2px;
+            text-align: justify;
+            text-indent: 0px;
+            text-transform: none;
+            white-space: normal;
+            word-spacing: 0px;
+            margin-top: 10px;
+            margin-bottom: 15px;}
+            
+           .contactoimg
+           {
+<<<<<<< HEAD
+               width:500px;
+               float:none;
+               margin-left: 600px;
+               margin-top:-350px;
+    height: 286px;
+}
+=======
+               width:599px;
+               float:left;
+               margin-left: 600px;
+               margin-top:-400px;
+               }
+>>>>>>> 00a9c34da759564c54bcd0dc7bdc8b33976cecc7
+
+.contentC
+{
+    width:500px;width:500px;
+    float:left;
+ }
+    
+#campos{
+
+
+	width: 300px;
+}
+
+.form-group
+{
+    padding:10px;  
+}
+
+.form-horizontal
+   {
+    padding:10px;  
+}
+.FAgregar
+{
+    margin-top:50px;
+    margin-left:100px;
+    }
+
+.FEditar
+{  
+    margin-top:-33px;
+    margin-left:200px;
+    }
+
+.FEliminar
+{
+    margin-top:-34px;
+    margin-left:285px;
+     }
+     
+.Botones
+{
+    margin-left: 130px;
+    
+    }
+ 

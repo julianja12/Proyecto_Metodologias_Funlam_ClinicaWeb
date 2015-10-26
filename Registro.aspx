@@ -122,7 +122,8 @@
             <br />
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
-                CommandName="Insert" Text="Registrar Usuario" CssClass="btn btn-primary" />
+                CommandName="Insert" Text="Registrar Usuario" CssClass="btn btn-primary" 
+                onclick="InsertButton_Click" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" 
                 CausesValidation="False" CommandName="Cancel" Text="Cancelar" 
                 CssClass="btn btn-primary" />

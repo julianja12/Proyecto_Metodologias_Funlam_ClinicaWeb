@@ -14,9 +14,8 @@ namespace Funlam_2015_02_Clinica_Web
             
         }
 
-  
 
-        protected void InsertButton_Click1(object sender, EventArgs e)
+        protected void InsertButton_Click(object sender, EventArgs e)
         {
             bool n = true;
 

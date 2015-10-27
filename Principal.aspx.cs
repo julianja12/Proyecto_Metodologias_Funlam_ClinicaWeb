@@ -30,23 +30,44 @@ namespace ProyectoClinica
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-          
-                    string user = txtUsuario.Text;
-                    string pass = EncriptacionMD5(txtContrasenia.Text); 
-                    ClinicaWebEntities db = new ClinicaWebEntities();
 
-                    string query = (from c in db.Usuario
-                                    where c.Username == user && c.contrasena == pass
-                                    select c.NombreUsuario).FirstOrDefault();
-                    if (query != null)
-                    {
-                        Session["user"] = query;
-                        Response.Redirect("AdministacionUsuarios.aspx");
-                    }
-                    else
-                    {
-                        lblMensaje.Text = "Usuario o Contraseña Incorrecto";
-                    }
+            string user = txtUsuario.Text;
+            string pass = EncriptacionMD5(txtContrasenia.Text);
+            ClinicaWebEntities db = new ClinicaWebEntities();
+
+            string query = (from n in db.Usuario
+                            where n.Username == user && n.contrasena == pass
+                            select n.NombreUsuario).FirstOrDefault();
+
+
+            int cedula = (from c in db.Usuario
+                          where c.Username == user && c.contrasena == pass
+                          select c.Cedula).FirstOrDefault();
+
+
+            int IdTipo = (from t in db.TipoUsuario
+                          where t.Cedula == cedula
+                          select t.IdTipoUsuario).FirstOrDefault();
+
+            if (query != null)
+            {
+                if (IdTipo == 1)
+                {
+                    Session["user"] = query;
+                    Response.Redirect("AdministacionUsuarios.aspx");
+
+                }
+                else
+                {
+
+                    Session["user"] = query;
+                    Response.Redirect("Principal.aspx");
+                }
+            }
+            else
+            {
+                lblMensaje.Text = "Usuario o Contraseña Incorrecto";
+            }
         }
 
         public static string EncriptacionMD5(string Pass)

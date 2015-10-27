@@ -21,6 +21,30 @@ namespace Funlam_2015_02_Clinica_Web
             }
          
         }
+
+        protected void btnRol_Click(object sender, EventArgs e)
+        {
+            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+            {
+                TipoUsuario NuevoRol = new TipoUsuario();
+
+                NuevoRol.Cedula = Convert.ToInt32(txtCedula.Text);
+                NuevoRol.IdTipoUsuario = Convert.ToInt32(ddlTipo.SelectedValue);
+                NuevoRol.NombreTipoUsuario = ddlTipo.SelectedItem.Text;
+
+
+                oConexion.TipoUsuario.AddObject(NuevoRol);
+                oConexion.SaveChanges();
+                bool n = true;
+
+                if (n == true)
+                {
+                    txtCedula.Text = ""; 
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Asigno el Rol Correctamente')</script>");
+                }
+
+            }
+        }
      
     }
 }

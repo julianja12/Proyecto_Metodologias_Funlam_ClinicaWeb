@@ -5,6 +5,7 @@
     <form id="form1" runat="server">
  <h2 class="style11">Administración de Usuarios</h2>
     <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Label ID="lblNombre" runat="server" Text="Nombre:"></asp:Label>
 &nbsp;
     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
@@ -57,6 +58,24 @@
         <SortedDescendingCellStyle BackColor="#CAC9C9" />
         <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
+
+    <h3>Asignacion de Permisos</h3>
+        <p>&nbsp;</p>
+        <asp:Label ID="Label1" runat="server" Text="Cedula Usuario:"></asp:Label>
+&nbsp;
+        <asp:TextBox ID="txtCedula" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label2" runat="server" Text="Tipo de Usuario"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="ddlTipo" runat="server">
+            <asp:ListItem Value="01">Administrador</asp:ListItem>
+            <asp:ListItem Value="02">Paciente</asp:ListItem>
+        </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnRol" runat="server" CssClass="btn btn-primary" 
+            Text="Asignar Rol" onclick="btnRol_Click" />
+    
+        <br />
     
     </div>
     

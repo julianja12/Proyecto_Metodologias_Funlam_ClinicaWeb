@@ -30,9 +30,9 @@
         </EntityType>
         <EntityType Name="TipoUsuario">
           <Key>
-            <PropertyRef Name="IdTipoUsuario" />
+            <PropertyRef Name="Cedula" />
           </Key>
-          <Property Name="Cedula" Type="int" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
           <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
           <Property Name="NombreTipoUsuario" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
@@ -63,8 +63,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__TipoUsuar__Cedul__09DE7BCC">
-          <End Role="Usuario" Type="ClinicaWebModel.Store.Usuario" Multiplicity="0..1" />
-          <End Role="TipoUsuario" Type="ClinicaWebModel.Store.TipoUsuario" Multiplicity="*" />
+          <End Role="Usuario" Type="ClinicaWebModel.Store.Usuario" Multiplicity="1" />
+          <End Role="TipoUsuario" Type="ClinicaWebModel.Store.TipoUsuario" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
               <PropertyRef Name="Cedula" />
@@ -104,9 +104,9 @@
         </EntityType>
         <EntityType Name="TipoUsuario">
           <Key>
-            <PropertyRef Name="IdTipoUsuario" />
+            <PropertyRef Name="Cedula" />
           </Key>
-          <Property Type="Int32" Name="Cedula" />
+          <Property Type="Int32" Name="Cedula" Nullable="false" />
           <Property Type="Int32" Name="IdTipoUsuario" Nullable="false" />
           <Property Type="String" Name="NombreTipoUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Usuario" Relationship="ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC" FromRole="TipoUsuario" ToRole="Usuario" />
@@ -140,8 +140,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__TipoUsuar__Cedul__09DE7BCC">
-          <End Type="ClinicaWebModel.Usuario" Role="Usuario" Multiplicity="0..1" />
-          <End Type="ClinicaWebModel.TipoUsuario" Role="TipoUsuario" Multiplicity="*" />
+          <End Type="ClinicaWebModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="ClinicaWebModel.TipoUsuario" Role="TipoUsuario" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
               <PropertyRef Name="Cedula" />
@@ -212,16 +212,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ClinicaWebBD">
-        <EntityTypeShape EntityType="ClinicaWebModel.Cita" Width="1.5" PointX="3" PointY="1" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="ClinicaWebModel.Cita" Width="1.5" PointX="3" PointY="1" Height="2.1725878906249996" />
         <EntityTypeShape EntityType="ClinicaWebModel.TipoUsuario" Width="1.5" PointX="3" PointY="4" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ClinicaWebModel.Usuario" Width="1.5" PointX="0.75" PointY="1.875" Height="3.1340950520833384" />
+        <EntityTypeShape EntityType="ClinicaWebModel.Usuario" Width="1.5" PointX="0.75" PointY="1.875" Height="3.1340950520833313" />
         <AssociationConnector Association="ClinicaWebModel.FK__Cita__Cedula__0519C6AF" >
-          <ConnectorPoint PointX="2.25" PointY="2.5237939453125016" />
-          <ConnectorPoint PointX="3" PointY="2.5237939453125016" />
+          <ConnectorPoint PointX="2.25" PointY="2.5237939453125" />
+          <ConnectorPoint PointX="3" PointY="2.5237939453125" />
         </AssociationConnector>
         <AssociationConnector Association="ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC" >
-          <ConnectorPoint PointX="2.25" PointY="4.5045475260416694" />
-          <ConnectorPoint PointX="3" PointY="4.5045475260416694" />
+          <ConnectorPoint PointX="2.25" PointY="4.5045475260416659" />
+          <ConnectorPoint PointX="3" PointY="4.5045475260416659" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

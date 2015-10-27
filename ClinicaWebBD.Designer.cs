@@ -20,7 +20,7 @@ using System.Xml.Serialization;
 #region Metadatos de relaciones en EDM
 
 [assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__Cita__Cedula__0519C6AF", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Funlam_2015_02_Clinica_Web.Usuario), "Cita", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.Cita), true)]
-[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__TipoUsuar__Cedul__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Funlam_2015_02_Clinica_Web.TipoUsuario), true)]
+[assembly: EdmRelationshipAttribute("ClinicaWebModel", "FK__TipoUsuar__Cedul__09DE7BCC", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Funlam_2015_02_Clinica_Web.Usuario), "TipoUsuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Funlam_2015_02_Clinica_Web.TipoUsuario), true)]
 
 #endregion
 
@@ -372,11 +372,13 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// Crear un nuevo objeto TipoUsuario.
         /// </summary>
+        /// <param name="cedula">Valor inicial de la propiedad Cedula.</param>
         /// <param name="idTipoUsuario">Valor inicial de la propiedad IdTipoUsuario.</param>
         /// <param name="nombreTipoUsuario">Valor inicial de la propiedad NombreTipoUsuario.</param>
-        public static TipoUsuario CreateTipoUsuario(global::System.Int32 idTipoUsuario, global::System.String nombreTipoUsuario)
+        public static TipoUsuario CreateTipoUsuario(global::System.Int32 cedula, global::System.Int32 idTipoUsuario, global::System.String nombreTipoUsuario)
         {
             TipoUsuario tipoUsuario = new TipoUsuario();
+            tipoUsuario.Cedula = cedula;
             tipoUsuario.IdTipoUsuario = idTipoUsuario;
             tipoUsuario.NombreTipoUsuario = nombreTipoUsuario;
             return tipoUsuario;
@@ -389,9 +391,9 @@ namespace Funlam_2015_02_Clinica_Web
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> Cedula
+        public global::System.Int32 Cedula
         {
             get
             {
@@ -399,21 +401,24 @@ namespace Funlam_2015_02_Clinica_Web
             }
             set
             {
-                OnCedulaChanging(value);
-                ReportPropertyChanging("Cedula");
-                _Cedula = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Cedula");
-                OnCedulaChanged();
+                if (_Cedula != value)
+                {
+                    OnCedulaChanging(value);
+                    ReportPropertyChanging("Cedula");
+                    _Cedula = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Cedula");
+                    OnCedulaChanged();
+                }
             }
         }
-        private Nullable<global::System.Int32> _Cedula;
-        partial void OnCedulaChanging(Nullable<global::System.Int32> value);
+        private global::System.Int32 _Cedula;
+        partial void OnCedulaChanging(global::System.Int32 value);
         partial void OnCedulaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 IdTipoUsuario
         {
@@ -423,14 +428,11 @@ namespace Funlam_2015_02_Clinica_Web
             }
             set
             {
-                if (_IdTipoUsuario != value)
-                {
-                    OnIdTipoUsuarioChanging(value);
-                    ReportPropertyChanging("IdTipoUsuario");
-                    _IdTipoUsuario = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("IdTipoUsuario");
-                    OnIdTipoUsuarioChanged();
-                }
+                OnIdTipoUsuarioChanging(value);
+                ReportPropertyChanging("IdTipoUsuario");
+                _IdTipoUsuario = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IdTipoUsuario");
+                OnIdTipoUsuarioChanged();
             }
         }
         private global::System.Int32 _IdTipoUsuario;
@@ -796,17 +798,33 @@ namespace Funlam_2015_02_Clinica_Web
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ClinicaWebModel", "FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario")]
-        public EntityCollection<TipoUsuario> TipoUsuario
+        public TipoUsuario TipoUsuario
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<TipoUsuario> TipoUsuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<TipoUsuario>("ClinicaWebModel.FK__TipoUsuar__Cedul__09DE7BCC", "TipoUsuario", value);
                 }
             }
         }

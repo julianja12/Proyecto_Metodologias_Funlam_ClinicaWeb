@@ -86,6 +86,7 @@
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.dll" />
     <Content Include="obj\Debug\Funlam-2015-02-Clinica-Web.pdb" />
+    <Content Include="Perfil.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="InformacionGeneral.aspx.designer.cs">
       <DependentUpon>InformacionGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Plantilla.Master.cs">
       <DependentUpon>Plantilla.Master</DependentUpon>

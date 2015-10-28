@@ -46,6 +46,29 @@ text-align: center;
 margin-top: 20px;
 }
 
+#informacion
+{
+width:600px;
+margin-top: 20px;
+float:left;
+text-align: justify;
+}
+
+#password
+{
+width:450px;
+margin-top: 20px;
+float:right;
+text-align: justify;
+}
+
+#lidivider{
+    position:absolute;
+    left:50%;
+    top:10%;
+    bottom:0%;
+    border-left:2px solid grey;
+}
 
   .style3
         {

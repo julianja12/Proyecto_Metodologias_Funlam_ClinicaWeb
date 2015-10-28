@@ -23,6 +23,14 @@ namespace ProyectoClinica
                 RegistroL.Visible = false;
                 MenuCitas.Visible = true;
             }
+            if (Convert.ToInt32(Session["tipousuario"]) == 1)
+            {
+                AdminUser.Visible = true;
+            }
+            else
+            {
+                AdminUser.Visible = false;
+            }
         }
         protected void CerrarSesionAction_Click(object sender, EventArgs e)
         {

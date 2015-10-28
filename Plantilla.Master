@@ -10,7 +10,6 @@
     <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
 </head>
 <body>
-
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -37,7 +36,8 @@
                             <li><a href="AdministracionCitas.aspx">Asignacion de Citas</a></li>
                         </ul>    
                     </li>
-                      <li ><a href="InformacionGeneral.aspx">Sobre Nosotros</a></li>
+                    <li id="AdminUser" runat="server"><a href="AdministacionUsuarios.aspx">Administración de Usuarios</a></li>
+                    <li ><a href="InformacionGeneral.aspx">Sobre Nosotros</a></li>
                     <li ><a href="Contactenos.aspx">Contáctenos</a></li>
                     <li id="RegistroL" runat="server"><a href="Registro.aspx">Registrarse</a></li>
                 </ul>
@@ -47,7 +47,8 @@
                             Bienvenido, <%:Session["user"]%> <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Ver Perfil</a></li>
+                            <li><a href="Perfil.aspx">Ver Perfil</a></li>
+                            <li class="divider"></li>
                             <li><a href="Principal.aspx" id="CerrarSesion" class="button" runat="server" onserverclick="CerrarSesionAction_Click" CausesValidation="False">Cerrar Sesión</a></li>
                         </ul>   
                     </li>

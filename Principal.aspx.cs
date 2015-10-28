@@ -51,10 +51,12 @@ namespace ProyectoClinica
 
             if (query != null)
             {
+                Session["cedula"] = cedula.ToString();
+                Session["tipousuario"] = IdTipo.ToString();
                 if (IdTipo == 1)
                 {
                     Session["user"] = query;
-                    Response.Redirect("AdministacionUsuarios.aspx");
+                    Response.Redirect("Principal.aspx");
 
                 }
                 else

@@ -15,11 +15,9 @@ namespace Funlam_2015_02_Clinica_Web
         {
             if (Session["user"] == null)
             {
-
                 Response.Redirect("Principal.aspx");
-
             }
-         
+            
         }
 
         protected void btnRol_Click(object sender, EventArgs e)

@@ -16,27 +16,35 @@ namespace ProyectoClinica
                 UsuarioL.Visible = false;
                 RegistroL.Visible = true;
                 MenuCitas.Visible = false;
-            }
-            else
-            {
-                UsuarioL.Visible = true;
-                RegistroL.Visible = false;
-                MenuCitas.Visible = true;
-            }
-            if (Convert.ToInt32(Session["tipousuario"]) == 1)
-            {
-                AdminUser.Visible = true;
-            }
-            else
-            {
                 AdminUser.Visible = false;
             }
+            else
+            {
+                if (Convert.ToInt32(Session["tipousuario"]) == 1)
+                {
+                    AdminUser.Visible = true;
+                    MenuCitas.Visible = false;
+                }
+                else
+                {
+                    AdminUser.Visible = false;
+                    MenuCitas.Visible = true;
+                }
+
+                UsuarioL.Visible = true;
+                RegistroL.Visible = false;
+            }
+
         }
         protected void CerrarSesionAction_Click(object sender, EventArgs e)
         {
             Session["user"] = null;
+            Session["tipousuario"] = null;
+            Session.Clear();
             UsuarioL.Visible = false;
             RegistroL.Visible = true;
+            AdminUser.Visible = false;
+            MenuCitas.Visible = false;
             Page.ClientScript.RegisterStartupScript(typeof(Page), "closePage", "window.open('close.html', '_self', null);", true);
             Response.Redirect("Principal.aspx");
         }

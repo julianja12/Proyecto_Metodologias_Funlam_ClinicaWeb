@@ -14,7 +14,10 @@ namespace Funlam_2015_02_Clinica_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] != null)
+            {
+                txtNombre.Text = Session["user"].ToString();
+            }
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)

@@ -213,8 +213,8 @@
     <Diagrams>
       <Diagram Name="ClinicaWebBD">
         <EntityTypeShape EntityType="ClinicaWebModel.Cita" Width="1.5" PointX="3" PointY="1" Height="2.1725878906249996" />
-        <EntityTypeShape EntityType="ClinicaWebModel.TipoUsuario" Width="1.5" PointX="3" PointY="4" Height="1.7879850260416674" />
-        <EntityTypeShape EntityType="ClinicaWebModel.Usuario" Width="1.5" PointX="0.75" PointY="1.875" Height="3.1340950520833326" />
+        <EntityTypeShape EntityType="ClinicaWebModel.TipoUsuario" Width="1.5" PointX="3" PointY="4" Height="1.787985026041671" />
+        <EntityTypeShape EntityType="ClinicaWebModel.Usuario" Width="1.5" PointX="0.75" PointY="1.875" Height="3.1340950520833313" />
         <AssociationConnector Association="ClinicaWebModel.FK__Cita__Cedula__0519C6AF" >
           <ConnectorPoint PointX="2.25" PointY="2.5237939453125" />
           <ConnectorPoint PointX="3" PointY="2.5237939453125" />

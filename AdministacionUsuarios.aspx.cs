@@ -24,23 +24,50 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnRol_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+                {
+                    TipoUsuario NuevoRol = new TipoUsuario();
+
+                    NuevoRol.Cedula = Convert.ToInt32(txtCedula.Text);
+                    NuevoRol.IdTipoUsuario = Convert.ToInt32(ddlTipo.SelectedValue);
+                    NuevoRol.NombreTipoUsuario = ddlTipo.SelectedItem.Text;
+
+
+                    oConexion.TipoUsuario.AddObject(NuevoRol);
+                    oConexion.SaveChanges();
+                    bool n = true;
+
+                    if (n == true)
+                    {
+                        txtCedula.Text = "";
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se Asigno el Rol Correctamente')</script>");
+                    }
+
+                }
+            }
+            catch {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Ingrese Nuevamente la Cedula Deseada')</script>");
+            
+            }
+        }
+
+        protected void btnRolC_Click(object sender, EventArgs e)
+        {
             using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
             {
-                TipoUsuario NuevoRol = new TipoUsuario();
+                int Cedula = Convert.ToInt32(txtCedula.Text);
+                TipoUsuario CancelarRol = oConexion.TipoUsuario.Where(w => w.Cedula == Cedula).Single();
 
-                NuevoRol.Cedula = Convert.ToInt32(txtCedula.Text);
-                NuevoRol.IdTipoUsuario = Convert.ToInt32(ddlTipo.SelectedValue);
-                NuevoRol.NombreTipoUsuario = ddlTipo.SelectedItem.Text;
-
-
-                oConexion.TipoUsuario.AddObject(NuevoRol);
+                oConexion.DeleteObject(CancelarRol);
                 oConexion.SaveChanges();
-                bool n = true;
+                bool ee = true;
+                if (ee == true) {
 
-                if (n == true)
-                {
-                    txtCedula.Text = ""; 
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Asigno el Rol Correctamente')</script>");
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Quito el Rol Correctamente')</script>");
+
                 }
 
             }

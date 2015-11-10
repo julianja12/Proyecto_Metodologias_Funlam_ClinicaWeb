@@ -16,13 +16,48 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnAgendar_Click(object sender, EventArgs e)
         {
+            
             using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
             {
+                string Fecha = txtFecha.Text;
+                string Hora = txtHoraCita.Text;
+                string Lugar = DropDownList1.SelectedItem.Text;
+                int ced = Convert.ToInt32(Session["cedula"]);
+
+                string queryHora = (from C in oConexion.Cita
+                                    where C.Cedula == ced
+                                    select C.HoraCita).Contains(txtHoraCita.Text);
+
+                string queryFecha = (from C in oConexion.Cita
+                                     where C.Cedula == ced
+                                     select C.FechaCita).FirstOrDefault();
+
+                string queryLugar = (from C in oConexion.Cita
+                                     where C.Cedula == ced
+                                     select C.LugarCita).FirstOrDefault();
+
+
+                if (txtFecha.Text == queryFecha)
+                {
+                    if (txtHoraCita.Text == queryHora)
+                    {
+                        if (DropDownList1.SelectedItem.Text == queryLugar)
+                        {
+
+                            Response.Write("<script LANGUAGE='JavaScript' >alert('La Cita No esta Disponible')</script>");
+                        }
+
+                    }
+
+                }
+                else { 
+           
+
                 Cita NuevaCita = new Cita();
 
-                NuevaCita.Cedula = Convert.ToInt32(txtUsuario.Text);
+                NuevaCita.Cedula = ced;
                 NuevaCita.FechaCita = txtFecha.Text;
-                NuevaCita.HoraCita = txtCita.Text;
+                NuevaCita.HoraCita = txtHoraCita.Text;
                 NuevaCita.LugarCita = DropDownList1.Text;
 
                 oConexion.Cita.AddObject(NuevaCita);
@@ -35,43 +70,60 @@ namespace Funlam_2015_02_Clinica_Web
                 }
               
             }
+
+            }
+            txtHoraCita.Enabled = true;
+            DropDownList1.Enabled = true;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+            try
             {
-                int Cedula = Convert.ToInt32(txtUsuario.Text);
-                Cita CancelarCita = oConexion.Cita.Where(w => w.Cedula == Cedula).Single();
-
-                oConexion.DeleteObject(CancelarCita);
-                oConexion.SaveChanges();
-                bool ee = true;
-              
-
-                if (ee == true)
+                using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
                 {
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Cancelo la Cita Correctamente')</script>");
+                    int cita = Convert.ToInt32(txtIdCita.Text);
 
-                    List<UsuarioCitas> resultado = (from c in oConexion.Usuario
-                                                    join f in oConexion.Cita
-                                                    on c.Cedula equals f.Cedula
-                                                    select new UsuarioCitas()
-                                                    {
-                                                      
-                                                        Cedula = c.Cedula,
-                                                        Nombre = c.NombreUsuario,
-                                                        Apellido = c.ApellidoUsuario,
-                                                        Lugar = f.LugarCita,
-                                                        Fecha = f.FechaCita,
-                                                        Hora = f.HoraCita
-                                                    }
-                                                        ).ToList();
+                    Cita CancelarCita = oConexion.Cita.Where(w => w.IdCita == cita).Single();
 
-                    GridView1.DataSource = resultado;
-                    GridView1.DataBind();
+                    oConexion.DeleteObject(CancelarCita);
+                    oConexion.SaveChanges();
+                    bool ee = true;
 
+
+                    if (ee == true)
+                    {
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se Cancelo la Cita Correctamente')</script>");
+
+                        List<UsuarioCitas> resultado = (from c in oConexion.Usuario
+                                                        join f in oConexion.Cita
+                                                        on c.Cedula equals f.Cedula
+                                                        where f.IdCita == cita
+                                                        select new UsuarioCitas()
+                                                        {
+                                                            CodigoCita = f.IdCita,
+                                                            Cedula = c.Cedula,
+                                                            Nombre = c.NombreUsuario,
+                                                            Apellido = c.ApellidoUsuario,
+                                                            Lugar = f.LugarCita,
+                                                            Fecha = f.FechaCita,
+                                                            Hora = f.HoraCita
+                                                        }
+                                                            ).ToList();
+
+                        GriewCitas.DataSource = resultado;
+                        GriewCitas.DataBind();
+
+                    }
                 }
+
+                txtHoraCita.Enabled = true;
+                DropDownList1.Enabled = true;
+            }
+
+            catch {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Revise los Datos Ingresados')</script>");
             }
         }
 
@@ -84,7 +136,7 @@ namespace Funlam_2015_02_Clinica_Web
                                                        on c.Cedula equals f.Cedula
                                                        select new UsuarioCitas()
                                                        {
-                                                          
+                                                           CodigoCita = f.IdCita,
                                                            Cedula = c.Cedula,
                                                            Nombre = c.NombreUsuario,
                                                            Apellido = c.ApellidoUsuario,
@@ -94,10 +146,13 @@ namespace Funlam_2015_02_Clinica_Web
                                                        }
                                                       ).ToList();
 
-                GridView1.DataSource = resultado;
-                GridView1.DataBind();
+                GriewCitas.DataSource = resultado;
+                GriewCitas.DataBind();
 
             }
+
+            txtHoraCita.Enabled = true;
+            DropDownList1.Enabled = true;
         }
     }
 }

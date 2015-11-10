@@ -9,6 +9,7 @@ namespace Funlam_2015_02_Clinica_Web
     {
    
         public int Cedula { get; set; }
+        public int CodigoCita { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Fecha { get; set; }

@@ -53,9 +53,11 @@ namespace ProyectoClinica
             {
                 Session["cedula"] = cedula.ToString();
                 Session["tipousuario"] = IdTipo.ToString();
+
                 if (IdTipo == 1)
                 {
                     Session["user"] = query;
+                    Session["cedula"] = cedula;
                     Response.Redirect("Principal.aspx");
 
                 }
@@ -63,6 +65,7 @@ namespace ProyectoClinica
                 {
 
                     Session["user"] = query;
+                    Session["cedula"] = cedula;
                     Response.Redirect("Principal.aspx");
                 }
             }

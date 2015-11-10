@@ -30,9 +30,7 @@
     <form id="form1" runat="server">
     <br />
     <br />
-    <h3 class="style13">&nbsp;</h3>
-    <h3 class="style13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong>¿QUIÉNES SOMOS?</strong></h3>
+    <h3 class="style13"><strong>¿QUIÉNES SOMOS?</strong></h3>
         <br />
         <br />
         <span class="style4"><em>Misión, Visión, Valores y Objetivos<br />

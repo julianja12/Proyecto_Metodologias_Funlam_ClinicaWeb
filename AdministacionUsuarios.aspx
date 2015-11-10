@@ -75,7 +75,8 @@
         <asp:Button ID="btnRol" runat="server" CssClass="btn btn-primary" 
             Text="Asignar Rol" onclick="btnRol_Click" />
     
-        <br />
+        <asp:Button ID="btnRolC" runat="server" CssClass="btn btn-primary" 
+            Text="Quitar Rol" onclick="btnRol_Click" />
     
     </div>
     

@@ -168,6 +168,13 @@ text-align: justify;
      margin-left: 90px;
 }
 
+#GriewCitas
+{
+    margin-top : 100px;
+    margin-left: 90px;
+    
+}
+
 .FormView1
 {
     position:relative;
@@ -225,3 +232,9 @@ text-align: justify;
       width: 450px;
       
       }
+      
+#btnRolC
+{
+    margin-left:500px;
+    margin-top : -45px;
+    }

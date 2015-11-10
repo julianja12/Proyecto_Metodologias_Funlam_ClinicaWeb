@@ -24,52 +24,34 @@ namespace Funlam_2015_02_Clinica_Web
                 string Lugar = DropDownList1.SelectedItem.Text;
                 int ced = Convert.ToInt32(Session["cedula"]);
 
-                string queryHora = (from C in oConexion.Cita
-                                    where C.Cedula == ced
-                                    select C.HoraCita).Contains(txtHoraCita.Text);
+                 int queryC = (from C in oConexion.Cita
+                               where  C.FechaCita == Fecha && C.HoraCita == Hora && C.LugarCita == Lugar
+                               select C.Cedula).FirstOrDefault();
 
-                string queryFecha = (from C in oConexion.Cita
-                                     where C.Cedula == ced
-                                     select C.FechaCita).FirstOrDefault();
+                 if (queryC != 0)
+                 {
 
-                string queryLugar = (from C in oConexion.Cita
-                                     where C.Cedula == ced
-                                     select C.LugarCita).FirstOrDefault();
+                     Response.Write("<script LANGUAGE='JavaScript' >alert('La Cita Ya Ha Sido Reservada')</script>");
 
+                 }
+                 else {
+                     Cita NuevaCita = new Cita();
 
-                if (txtFecha.Text == queryFecha)
-                {
-                    if (txtHoraCita.Text == queryHora)
-                    {
-                        if (DropDownList1.SelectedItem.Text == queryLugar)
-                        {
+                     NuevaCita.Cedula = ced;
+                     NuevaCita.FechaCita = txtFecha.Text;
+                     NuevaCita.HoraCita = txtHoraCita.Text;
+                     NuevaCita.LugarCita = DropDownList1.Text;
 
-                            Response.Write("<script LANGUAGE='JavaScript' >alert('La Cita No esta Disponible')</script>");
-                        }
+                     oConexion.Cita.AddObject(NuevaCita);
+                     oConexion.SaveChanges();
+                     bool n = true;
 
-                    }
-
-                }
-                else { 
-           
-
-                Cita NuevaCita = new Cita();
-
-                NuevaCita.Cedula = ced;
-                NuevaCita.FechaCita = txtFecha.Text;
-                NuevaCita.HoraCita = txtHoraCita.Text;
-                NuevaCita.LugarCita = DropDownList1.Text;
-
-                oConexion.Cita.AddObject(NuevaCita);
-                oConexion.SaveChanges();
-                bool n= true;
-
-                if (n == true)
-                {   
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
-                }
-              
-            }
+                     if (n == true)
+                     {
+                         Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
+                     }
+                    
+                 }
 
             }
             txtHoraCita.Enabled = true;

@@ -56,22 +56,34 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnRolC_Click(object sender, EventArgs e)
         {
-            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+            try
             {
-                int Cedula = Convert.ToInt32(txtCedula.Text);
-                TipoUsuario CancelarRol = oConexion.TipoUsuario.Where(w => w.Cedula == Cedula).Single();
+                using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+                {
+                    int Cedula = Convert.ToInt32(txtCedula.Text);
+                    TipoUsuario CancelarRol = oConexion.TipoUsuario.Where(w => w.Cedula == Cedula).Single();
 
-                oConexion.DeleteObject(CancelarRol);
-                oConexion.SaveChanges();
-                bool ee = true;
-                if (ee == true) {
+                    oConexion.DeleteObject(CancelarRol);
+                    oConexion.SaveChanges();
+                    bool ee = true;
+                    if (ee == true)
+                    {
 
-                    Response.Write("<script LANGUAGE='JavaScript' >alert('Se Quito el Rol Correctamente')</script>");
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('Se Quito el Rol Correctamente')</script>");
+
+                    }
 
                 }
 
             }
+            catch
+            {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('No Se Actualizo Correctamente')</script>");
+            }
         }
+
+  
      
     }
 }

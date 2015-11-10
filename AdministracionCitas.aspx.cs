@@ -16,46 +16,55 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnAgendar_Click(object sender, EventArgs e)
         {
-            
-            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+            try
             {
-                string Fecha = txtFecha.Text;
-                string Hora = txtHoraCita.Text;
-                string Lugar = DropDownList1.SelectedItem.Text;
-                int ced = Convert.ToInt32(Session["cedula"]);
+                using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+                {
+                    string Fecha = txtFecha.Text;
+                    string Hora = txtHoraCita.Text;
+                    string Lugar = DropDownList1.SelectedItem.Text;
+                    int ced = Convert.ToInt32(Session["cedula"]);
 
-                 int queryC = (from C in oConexion.Cita
-                               where  C.FechaCita == Fecha && C.HoraCita == Hora && C.LugarCita == Lugar
-                               select C.Cedula).FirstOrDefault();
+                    int queryC = (from C in oConexion.Cita
+                                  where C.FechaCita == Fecha && C.HoraCita == Hora && C.LugarCita == Lugar
+                                  select C.Cedula).FirstOrDefault();
 
-                 if (queryC != 0)
-                 {
+                    if (queryC != 0)
+                    {
 
-                     Response.Write("<script LANGUAGE='JavaScript' >alert('La Cita Ya Ha Sido Reservada')</script>");
+                        Response.Write("<script LANGUAGE='JavaScript' >alert('La Cita Ya Ha Sido Reservada')</script>");
 
-                 }
-                 else {
-                     Cita NuevaCita = new Cita();
+                    }
+                    else
+                    {
+                        Cita NuevaCita = new Cita();
 
-                     NuevaCita.Cedula = ced;
-                     NuevaCita.FechaCita = txtFecha.Text;
-                     NuevaCita.HoraCita = txtHoraCita.Text;
-                     NuevaCita.LugarCita = DropDownList1.Text;
+                        NuevaCita.Cedula = ced;
+                        NuevaCita.FechaCita = txtFecha.Text;
+                        NuevaCita.HoraCita = txtHoraCita.Text;
+                        NuevaCita.LugarCita = DropDownList1.Text;
 
-                     oConexion.Cita.AddObject(NuevaCita);
-                     oConexion.SaveChanges();
-                     bool n = true;
+                        oConexion.Cita.AddObject(NuevaCita);
+                        oConexion.SaveChanges();
+                        bool n = true;
 
-                     if (n == true)
-                     {
-                         Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
-                     }
-                    
-                 }
+                        if (n == true)
+                        {
+                            Response.Write("<script LANGUAGE='JavaScript' >alert('Se Agendo Correctamente la Cita')</script>");
+                        }
 
+                    }
+
+                }
+
+                txtHoraCita.Enabled = true;
+                DropDownList1.Enabled = true;
             }
-            txtHoraCita.Enabled = true;
-            DropDownList1.Enabled = true;
+
+            catch {
+
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Verifique Los Datos Ingresados')</script>");
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -113,9 +122,11 @@ namespace Funlam_2015_02_Clinica_Web
         {
             using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
             {
+                int cita = Convert.ToInt32(txtIdCita.Text);
                 List<UsuarioCitas> resultado = (from c in oConexion.Usuario
                                                        join f in oConexion.Cita
                                                        on c.Cedula equals f.Cedula
+                                                       where f.IdCita == cita
                                                        select new UsuarioCitas()
                                                        {
                                                            CodigoCita = f.IdCita,

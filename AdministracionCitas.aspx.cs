@@ -120,32 +120,39 @@ namespace Funlam_2015_02_Clinica_Web
 
         protected void btnConsultas_Click(object sender, EventArgs e)
         {
-            using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+            try
             {
-                int cita = Convert.ToInt32(txtIdCita.Text);
-                List<UsuarioCitas> resultado = (from c in oConexion.Usuario
-                                                       join f in oConexion.Cita
-                                                       on c.Cedula equals f.Cedula
-                                                       where f.IdCita == cita
-                                                       select new UsuarioCitas()
-                                                       {
-                                                           CodigoCita = f.IdCita,
-                                                           Cedula = c.Cedula,
-                                                           Nombre = c.NombreUsuario,
-                                                           Apellido = c.ApellidoUsuario,
-                                                           Lugar = f.LugarCita,
-                                                           Fecha = f.FechaCita,
-                                                           Hora = f.HoraCita
-                                                       }
-                                                      ).ToList();
+                using (ClinicaWebEntities oConexion = new ClinicaWebEntities())
+                {
+                    int ced = Convert.ToInt32(Session["cedula"]);
+                    List<UsuarioCitas> resultado = (from c in oConexion.Usuario
+                                                    join f in oConexion.Cita
+                                                    on c.Cedula equals f.Cedula
+                                                    where f.Cedula == ced
+                                                    select new UsuarioCitas()
+                                                    {
+                                                        CodigoCita = f.IdCita,
+                                                        Cedula = c.Cedula,
+                                                        Nombre = c.NombreUsuario,
+                                                        Apellido = c.ApellidoUsuario,
+                                                        Lugar = f.LugarCita,
+                                                        Fecha = f.FechaCita,
+                                                        Hora = f.HoraCita
+                                                    }
+                                                          ).ToList();
 
-                GriewCitas.DataSource = resultado;
-                GriewCitas.DataBind();
+                    GriewCitas.DataSource = resultado;
+                    GriewCitas.DataBind();
 
+                }
+
+                txtHoraCita.Enabled = true;
+                DropDownList1.Enabled = true;
             }
 
-            txtHoraCita.Enabled = true;
-            DropDownList1.Enabled = true;
+            catch {
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Revise los Datos Ingresados')</script>");
+            }
         }
     }
 }

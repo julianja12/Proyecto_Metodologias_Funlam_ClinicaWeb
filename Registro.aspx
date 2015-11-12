@@ -10,7 +10,8 @@
     los siguientes campos:</h1>
 <img src="Img/Clinica.jpg" class="imgResgistro" alt="logo"/>&nbsp;&nbsp;&nbsp;<asp:FormView 
         ID="FormView1" CssClass="FormView1" runat="server" DataKeyNames="Cedula" 
-        DataSourceID="EntityDataSource1" DefaultMode="Insert">
+        DataSourceID="EntityDataSource1" DefaultMode="Insert" 
+        oniteminserted="FormView1_ItemInserted">
         <EditItemTemplate>
             Cedula:
             <asp:Label ID="CedulaLabel1" runat="server" Text='<%# Eval("Cedula") %>' />
